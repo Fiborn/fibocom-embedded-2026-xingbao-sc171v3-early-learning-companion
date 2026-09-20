@@ -1,0 +1,19 @@
+[Unit]
+Description=Xingbao local six-point arm compatibility endpoint (10000 to 8764)
+After=xingbao-unified-arm.service
+Wants=xingbao-unified-arm.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fibo/xingbao_companion_unified
+Environment=HOME=/home/fibo
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/home/fibo/.config/xingbao/runtime.env
+ExecStart=/home/fibo/miniforge3/bin/python3 -u soarm101_module/arm_command_server_10000.py
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target graphical-session.target

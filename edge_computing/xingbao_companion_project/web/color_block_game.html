@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>星宝色块牌阵</title>
+  <style>
+    :root {
+      --bg: #060813;
+      --panel: rgba(11, 18, 34, 0.78);
+      --line: rgba(135, 159, 205, 0.25);
+      --text: #f8f1d6;
+      --muted: #9da9c8;
+      --gold: #f8c75d;
+      --cyan: #5ce6ff;
+      --violet: #a579ff;
+      --danger: #ff6370;
+      --green: #48d68a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(103, 77, 199, 0.3), transparent 28%),
+        radial-gradient(circle at 20% 18%, rgba(248, 199, 93, 0.18), transparent 24%),
+        radial-gradient(circle at 82% 74%, rgba(92, 230, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #03050d, var(--bg) 46%, #0a0f1f);
+      color: var(--text);
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 14px;
+      border: 1px solid rgba(196, 160, 83, 0.28);
+      border-radius: 28px;
+      box-shadow:
+        inset 0 0 0 1px rgba(92, 230, 255, 0.08),
+        inset 0 0 60px rgba(248, 199, 93, 0.06),
+        0 0 42px rgba(92, 230, 255, 0.08);
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .slot,
+    .chip,
+    .primary-button,
+    .mic-button,
+    .pass-button,
+    .pill-action {
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .game {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-width: 1024px;
+      min-height: 600px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .starfield,
+    .lanes {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(60deg, rgba(118, 148, 210, 0.08) 1px, transparent 1px),
+        linear-gradient(120deg, rgba(118, 148, 210, 0.06) 1px, transparent 1px);
+      background-size: 84px 84px;
+      pointer-events: none;
+    }
+
+    .header {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 0;
+      min-height: 56px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 24px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      z-index: 7;
+    }
+
+    .round {
+      position: absolute;
+      left: 50%;
+      top: 35.5vh;
+      transform: translateX(-50%);
+      color: var(--gold);
+      font-size: clamp(18px, 1.65vw, 28px);
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(248, 199, 93, 0.45);
+    }
+
+    .match-score {
+      display: none;
+    }
+
+    .turn-state {
+      position: absolute;
+      left: 50%;
+      top: 60vh;
+      transform: translateX(-50%);
+      justify-self: auto;
+      color: var(--gold);
+      font-size: clamp(17px, 1.45vw, 24px);
+      font-weight: 700;
+      text-shadow: 0 0 18px rgba(248, 199, 93, 0.42);
+    }
+
+    .top-actions {
+      position: absolute;
+      right: 3.2vw;
+      top: 3.8vh;
+      z-index: 9;
+      display: flex;
+      gap: 12px;
+    }
+
+    .pill-action {
+      height: 42px;
+      padding: 0 18px;
+      border: 1px solid rgba(248, 241, 214, 0.22);
+      border-radius: 999px;
+      background: rgba(8, 13, 26, 0.58);
+      color: rgba(248, 241, 214, 0.9);
+      font-weight: 800;
+      box-shadow: inset 0 0 20px rgba(248, 199, 93, 0.05), 0 0 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .avatar-stage {
+      position: absolute;
+      left: 50%;
+      top: 3.4vh;
+      width: min(23vw, 330px);
+      height: min(23vh, 208px);
+      transform: translateX(-50%);
+      z-index: 5;
+      display: grid;
+      place-items: center;
+    }
+
+    .avatar-aura {
+      position: absolute;
+      width: 82%;
+      aspect-ratio: 1.45;
+      border: 1px solid rgba(248, 199, 93, 0.52);
+      border-radius: 50%;
+      box-shadow:
+        0 0 34px rgba(248, 199, 93, 0.2),
+        0 -8px 32px rgba(92, 230, 255, 0.25),
+        inset 0 0 34px rgba(92, 230, 255, 0.08);
+      animation: auraPulse 2.8s ease-in-out infinite;
+    }
+
+    .avatar {
+      --tilt: 0deg;
+      position: relative;
+      width: min(13vw, 150px);
+      min-width: 112px;
+      aspect-ratio: 1;
+      transform: translateY(6px) rotate(var(--tilt));
+      animation: float 2.4s ease-in-out infinite;
+      filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.34));
+    }
+
+    .avatar .head {
+      position: absolute;
+      left: 50%;
+      top: 14%;
+      width: 78%;
+      aspect-ratio: 1.18;
+      transform: translateX(-50%);
+      border-radius: 46% 46% 44% 44%;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(92, 230, 255, 0.18), transparent 42%),
+        linear-gradient(145deg, #fbf0c8, #29314a 25%, #070a16 55%, #02030a);
+      border: 3px solid rgba(248, 199, 93, 0.72);
+      box-shadow:
+        inset 0 0 28px rgba(92, 230, 255, 0.14),
+        inset 0 0 0 10px rgba(255, 255, 255, 0.04),
+        0 0 28px rgba(248, 199, 93, 0.36);
+    }
+
+    .avatar .body {
+      display: none;
+    }
+
+    .avatar .eye {
+      position: absolute;
+      top: 42%;
+      width: 12%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #f7f1ff;
+      box-shadow: 0 0 14px rgba(248, 241, 214, 0.92);
+    }
+
+    .avatar .eye.left {
+      left: 36%;
+    }
+
+    .avatar .eye.right {
+      right: 36%;
+    }
+
+    .avatar .mouth {
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      width: 10%;
+      height: 1px;
+      transform: translateX(-50%);
+      border-bottom: 2px solid rgba(248, 241, 214, 0.8);
+      border-radius: 999px;
+    }
+
+    .avatar .arm {
+      position: absolute;
+      top: 44%;
+      width: 20%;
+      height: 32%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #f8e2ad, #4a3652);
+      box-shadow: 0 0 14px rgba(248, 199, 93, 0.26);
+      transform-origin: center;
+      transition: transform 240ms ease, left 240ms ease, right 240ms ease;
+    }
+
+    .avatar .arm.left {
+      left: -7%;
+      transform: rotate(0);
+    }
+
+    .avatar .arm.right {
+      right: -7%;
+      transform: rotate(0);
+    }
+
+    .avatar.listening .eye {
+      animation: blink 4s infinite;
+    }
+
+    .avatar.thinking .mouth {
+      width: 8%;
+      border: 0;
+      background: #11192c;
+      border-radius: 50%;
+    }
+
+    .avatar.confirm .mouth,
+    .avatar.celebrate .mouth {
+      height: 16%;
+      border-bottom-width: 5px;
+    }
+
+    .avatar.point-left .arm.left {
+      left: -44%;
+      transform: rotate(-10deg) scaleX(1.4);
+    }
+
+    .avatar.point-right .arm.right {
+      right: -44%;
+      transform: rotate(10deg) scaleX(1.4);
+    }
+
+    .avatar.celebrate .arm.left {
+      transform: translateY(-40px) rotate(-52deg);
+    }
+
+    .avatar.celebrate .arm.right {
+      transform: translateY(-40px) rotate(52deg);
+    }
+
+    .avatar.comfort .arm.left {
+      transform: rotate(52deg);
+    }
+
+    .avatar.comfort .arm.right {
+      transform: rotate(-52deg);
+    }
+
+    .avatar.confused {
+      --tilt: -4deg;
+    }
+
+    .speech {
+      position: absolute;
+      left: 50%;
+      top: 22vh;
+      transform: translateX(-50%);
+      width: min(24vw, 350px);
+      min-height: 38px;
+      padding: 9px 18px;
+      border: 1px solid rgba(248, 199, 93, 0.32);
+      border-radius: 999px;
+      background: linear-gradient(145deg, rgba(20, 20, 29, 0.9), rgba(8, 14, 29, 0.72));
+      color: var(--text);
+      box-shadow: 0 0 28px rgba(248, 199, 93, 0.14);
+      z-index: 5;
+      text-align: center;
+      font-size: clamp(14px, 1vw, 16px);
+      line-height: 1.25;
+    }
+
+    .speech::before {
+      content: "|||";
+      position: absolute;
+      left: 13px;
+      top: 8px;
+      width: auto;
+      height: auto;
+      background: transparent;
+      border: 0;
+      transform: none;
+      color: var(--gold);
+      letter-spacing: -2px;
+    }
+
+    .slot-group {
+      position: absolute;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(82px, 7.2vw));
+      grid-auto-rows: minmax(126px, 11.4vw);
+      gap: 16px;
+    }
+
+    .slot-group.child {
+      left: 3.7vw;
+      top: 17.6vh;
+    }
+
+    .slot-group.xingbao {
+      right: 3.7vw;
+      bottom: 20.7vh;
+    }
+
+    .group-title {
+      position: absolute;
+      z-index: 3;
+      font-size: clamp(34px, 3.6vw, 58px);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-shadow:
+        0 0 12px currentColor,
+        0 0 28px currentColor,
+        0 0 44px rgba(248, 241, 214, 0.18);
+    }
+
+    .group-title::before,
+    .group-title::after {
+      content: "";
+      display: block;
+      width: clamp(42px, 5vw, 86px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, currentColor, transparent);
+      box-shadow: 0 0 13px currentColor;
+      opacity: 0.84;
+    }
+
+    .group-title .title-star {
+      position: relative;
+      width: clamp(22px, 2.2vw, 34px);
+      height: clamp(22px, 2.2vw, 34px);
+      flex: 0 0 auto;
+      filter: drop-shadow(0 0 12px currentColor);
+    }
+
+    .group-title .title-star::before,
+    .group-title .title-star::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 74%;
+      height: 74%;
+      border: 2px solid currentColor;
+      border-radius: 2px;
+      background: radial-gradient(circle, currentColor 0 9%, transparent 10%);
+      transform-origin: center;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .group-title .title-star::after {
+      width: 42%;
+      height: 42%;
+      opacity: 0.76;
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .group-title .title-diamond {
+      width: 9px;
+      height: 9px;
+      border: 1px solid currentColor;
+      transform: rotate(45deg);
+      box-shadow: 0 0 12px currentColor;
+      opacity: 0.8;
+      flex: 0 0 auto;
+    }
+
+    .group-title.child {
+      left: 4.2vw;
+      top: 8vh;
+      color: var(--gold);
+    }
+
+    .group-title.xingbao {
+      right: 4.2vw;
+      bottom: 41.7vh;
+      color: var(--cyan);
+    }
+
+    .slot {
+      --rim: #fff;
+      position: relative;
+      border-radius: 8px;
+      border: 1px solid color-mix(in srgb, var(--rim) 68%, white 12%);
+      background:
+        radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--rim) 18%, transparent), transparent 34%),
+        linear-gradient(180deg, transparent 0 12%, rgba(255, 255, 255, 0.08) 12% 13%, transparent 13%),
+        linear-gradient(145deg, rgba(19, 29, 54, 0.92), rgba(9, 14, 29, 0.82));
+      box-shadow:
+        0 0 22px color-mix(in srgb, var(--rim) 34%, transparent),
+        inset 0 0 22px rgba(255, 255, 255, 0.05),
+        inset 0 0 0 4px rgba(255, 255, 255, 0.03);
+      display: grid;
+      place-items: center;
+      color: rgba(248, 241, 214, 0.88);
+      font-weight: 900;
+      font-size: clamp(16px, 1.55vw, 24px);
+      overflow: hidden;
+    }
+
+    .slot::before {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border: 1px solid color-mix(in srgb, var(--rim) 26%, transparent);
+      transform: rotate(45deg);
+      box-shadow: 0 0 20px color-mix(in srgb, var(--rim) 16%, transparent);
+    }
+
+    .slot::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid color-mix(in srgb, var(--rim) 35%, transparent);
+      border-radius: 6px;
+    }
+
+    .slot.filled {
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.45), transparent 30%),
+        linear-gradient(145deg, color-mix(in srgb, var(--rim) 82%, white 10%), color-mix(in srgb, var(--rim) 72%, black 20%));
+      color: #07101d;
+      transform: translateY(-5px);
+      box-shadow: 0 0 34px color-mix(in srgb, var(--rim) 58%, transparent), inset 0 -10px 20px rgba(0, 0, 0, 0.16);
+    }
+
+    .slot .points {
+      position: absolute;
+      right: 10px;
+      bottom: 8px;
+      font-size: 14px;
+    }
+
+    .score-core {
+      position: absolute;
+      left: 50%;
+      top: 50.8%;
+      width: min(32vw, 470px);
+      aspect-ratio: 1.65;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      text-align: center;
+      display: grid;
+      align-content: center;
+      padding: 18px 28px 20px;
+      border: 1px solid rgba(248, 199, 93, 0.32);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 46%, rgba(248, 199, 93, 0.16), transparent 47%),
+        radial-gradient(circle, rgba(8, 13, 26, 0.86), rgba(8, 13, 26, 0.28) 70%, transparent 72%);
+      box-shadow:
+        0 0 48px rgba(248, 199, 93, 0.14),
+        inset 0 0 0 1px rgba(92, 230, 255, 0.12),
+        inset 0 0 54px rgba(248, 199, 93, 0.08);
+    }
+
+    .total-score {
+      color: var(--text);
+      font-size: clamp(50px, 5.7vw, 94px);
+      line-height: 0.95;
+      font-weight: 900;
+      text-shadow: 0 0 22px rgba(248, 241, 214, 0.34);
+    }
+
+    .score-label {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.2vw, 18px);
+      font-weight: 700;
+    }
+
+    .lane-label {
+      position: absolute;
+      z-index: 3;
+      font-size: clamp(22px, 2.2vw, 34px);
+      font-weight: 900;
+      text-shadow: 0 0 24px currentColor;
+      pointer-events: none;
+    }
+
+    .lane-label.star {
+      display: none;
+      color: var(--gold);
+    }
+
+    .lane-label.guard {
+      display: none;
+      color: var(--cyan);
+    }
+
+    .lane-strength {
+      position: absolute;
+      z-index: 3;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(12, 19, 36, 0.72);
+      border: 1px solid rgba(142, 171, 226, 0.24);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .lane-strength.star {
+      left: 5vw;
+      top: 52.5vh;
+      color: rgba(248, 199, 93, 0.86);
+    }
+
+    .lane-strength.star::before {
+      content: "✧ 汇聚星光 · ";
+      color: var(--gold);
+    }
+
+    .lane-strength.guard {
+      right: 8.5vw;
+      left: auto;
+      top: 31.5vh;
+      color: rgba(92, 230, 255, 0.86);
+    }
+
+    .lane-strength.guard::before {
+      content: "✦ 守护同伴 · ";
+      color: var(--cyan);
+    }
+
+    .command-bar {
+      position: absolute;
+      left: 50%;
+      right: auto;
+      bottom: 3.7vh;
+      width: min(48vw, 760px);
+      transform: translateX(-50%);
+      z-index: 6;
+      display: grid;
+      grid-template-columns: auto minmax(330px, 1fr) auto auto auto;
+      gap: 10px;
+      align-items: center;
+      padding: 13px 14px;
+      border: 1px solid rgba(248, 199, 93, 0.34);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(18, 16, 22, 0.95), rgba(8, 10, 18, 0.86));
+      box-shadow:
+        0 0 36px rgba(248, 199, 93, 0.12),
+        inset 0 0 26px rgba(248, 199, 93, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .prompt-title {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .prompt-help {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .command-input {
+      width: 100%;
+      height: 48px;
+      border: 1px solid rgba(92, 230, 255, 0.22);
+      border-radius: 16px;
+      outline: none;
+      padding: 0 18px;
+      background: rgba(7, 11, 23, 0.9);
+      color: var(--text);
+      font-size: 18px;
+      box-shadow: inset 0 0 18px rgba(92, 230, 255, 0.06);
+    }
+
+    .command-input::placeholder {
+      color: rgba(157, 169, 200, 0.78);
+    }
+
+    .primary-button,
+    .mic-button,
+    .secondary-button {
+      height: 48px;
+      border: 0;
+      border-radius: 16px;
+      padding: 0 20px;
+      color: var(--text);
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+    }
+
+    .primary-button {
+      background: linear-gradient(135deg, #254e7b, #623aa0);
+      box-shadow: 0 0 24px rgba(92, 230, 255, 0.18);
+    }
+
+    .mic-button {
+      background: linear-gradient(135deg, #1d6b80, #233d76);
+      box-shadow: 0 0 22px rgba(92, 230, 255, 0.18);
+    }
+
+    .mic-button.listening {
+      color: #06111d;
+      background: linear-gradient(135deg, #5ce6ff, #f8c75d);
+      box-shadow: 0 0 28px rgba(92, 230, 255, 0.42);
+    }
+
+    .secondary-button {
+      background: linear-gradient(135deg, #55315b, #2c2344);
+      box-shadow: 0 0 20px rgba(165, 121, 255, 0.14);
+    }
+
+    .primary-button:hover,
+    .mic-button:hover,
+    .secondary-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .chips {
+      position: absolute;
+      left: 2.8vw;
+      bottom: 18vh;
+      z-index: 5;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      max-width: min(44vw, 560px);
+    }
+
+    .chip {
+      --chip: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid color-mix(in srgb, var(--chip) 52%, white 8%);
+      border-radius: 999px;
+      background: rgba(11, 18, 34, 0.74);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 0 18px color-mix(in srgb, var(--chip) 18%, transparent);
+    }
+
+    .chip.selected {
+      color: #07101d;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--chip) 82%, white 18%), #f8f1d6);
+      box-shadow:
+        0 0 26px color-mix(in srgb, var(--chip) 50%, transparent),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.62);
+      transform: translateY(-2px);
+    }
+
+    .chip-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 5px;
+      background: var(--chip);
+      box-shadow: 0 0 13px var(--chip);
+    }
+
+    .event-log {
+      position: absolute;
+      right: 2.8vw;
+      top: 23.5vh;
+      z-index: 4;
+      width: min(24vw, 330px);
+      max-height: 24vh;
+      padding: 14px 16px;
+      border: 1px solid rgba(142, 171, 226, 0.22);
+      border-radius: 20px;
+      background: rgba(8, 13, 26, 0.58);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      overflow: hidden;
+    }
+
+    .event-log strong {
+      color: var(--text);
+    }
+
+    .slot.selectable {
+      cursor: pointer;
+      outline: 1px solid rgba(248, 241, 214, 0.34);
+      outline-offset: 5px;
+      animation: slotBreathe 1.45s ease-in-out infinite;
+    }
+
+    .slot .owner {
+      position: absolute;
+      left: 10px;
+      bottom: 8px;
+      font-size: 12px;
+      opacity: 0.86;
+    }
+
+    .corner-nav {
+      position: absolute;
+      bottom: 3.6vh;
+      z-index: 7;
+      display: grid;
+      place-items: center;
+      gap: 6px;
+      color: rgba(248, 241, 214, 0.86);
+      font-weight: 800;
+      text-shadow: 0 0 14px rgba(248, 199, 93, 0.24);
+    }
+
+    .corner-nav.left {
+      left: 5.6vw;
+    }
+
+    .corner-nav.right {
+      right: 5.6vw;
+    }
+
+    .corner-icon {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(248, 241, 214, 0.24);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(248, 199, 93, 0.16), rgba(8, 13, 26, 0.62));
+      box-shadow: 0 0 28px rgba(248, 199, 93, 0.12), inset 0 0 22px rgba(92, 230, 255, 0.08);
+      font-size: 32px;
+    }
+
+    @media (max-width: 1100px), (max-height: 650px) {
+      .game {
+        min-width: 100vw;
+        min-height: 100vh;
+      }
+
+      .speech {
+        top: 21vh;
+        right: 3vw;
+        left: auto;
+        width: 30vw;
+      }
+
+      .event-log {
+        display: none;
+      }
+
+      .slot-group {
+        grid-template-columns: repeat(3, 70px);
+        grid-auto-rows: 70px;
+      }
+
+      .command-bar {
+        width: min(62vw, 760px);
+        grid-template-columns: auto 1fr auto auto auto;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(4px) rotate(var(--tilt)); }
+      50% { transform: translateY(-8px) rotate(var(--tilt)); }
+    }
+
+    @keyframes auraPulse {
+      0%, 100% { transform: scale(0.97); opacity: 0.62; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.12); }
+    }
+
+    @keyframes slotBreathe {
+      0%, 100% { box-shadow: 0 0 20px color-mix(in srgb, var(--rim) 28%, transparent), inset 0 0 22px rgba(255, 255, 255, 0.05); }
+      50% { box-shadow: 0 0 36px color-mix(in srgb, var(--rim) 52%, transparent), inset 0 0 26px rgba(255, 255, 255, 0.1); }
+    }
+  </style>
+</head>
+<body>
+  <main class="game" aria-label="星宝色块牌阵游戏界面">
+    <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+    <canvas class="lanes" id="lanes" aria-hidden="true"></canvas>
+    <div class="grid-lines" aria-hidden="true"></div>
+
+    <nav class="top-actions" aria-label="游戏设置">
+      <button class="pill-action">规则</button>
+      <button class="pill-action">声音设置</button>
+    </nav>
+
+    <header class="header">
+      <div class="round" id="roundLabel">第 1 回合</div>
+      <div class="match-score" id="matchScore">孩子 0 : 0 星宝</div>
+      <div class="turn-state" id="turnState">轮到孩子 · 正在聆听</div>
+    </header>
+
+    <section class="avatar-stage" aria-label="虚拟星宝">
+      <div class="avatar-aura"></div>
+      <div class="avatar listening" id="avatar">
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="body"></div>
+        <div class="head">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+    </section>
+    <aside class="speech" id="speech">星阵已经开启，我在听你说话。</aside>
+
+    <div class="group-title child"><span class="title-star"></span><span>星光线</span><span class="title-diamond"></span></div>
+    <div class="slot-group child" id="childSlots"></div>
+    <div class="group-title xingbao"><span class="title-diamond"></span><span>守护线</span><span class="title-star"></span></div>
+    <div class="slot-group xingbao" id="xingbaoSlots"></div>
+
+    <div class="lane-label star">星光线</div>
+    <div class="lane-strength star" id="starStrength">微光</div>
+    <div class="lane-label guard">守护线</div>
+    <div class="lane-strength guard" id="guardStrength">微光</div>
+
+    <section class="score-core" aria-label="当前总分">
+      <div class="total-score" id="totalScore">0 : 0</div>
+      <div class="score-label">孩子总能量 · 星宝总能量</div>
+    </section>
+
+    <div class="chips" id="chips" aria-label="可用色块"></div>
+    <aside class="event-log" id="eventLog"><strong>牌局记录</strong><br>等待孩子移动色块并说出指令。</aside>
+
+    <div class="corner-nav left" aria-label="星图">
+      <div class="corner-icon">✦</div>
+      <div>星图</div>
+    </div>
+    <div class="corner-nav right" aria-label="故事">
+      <div class="corner-icon">◈</div>
+      <div>故事</div>
+    </div>
+
+    <footer class="command-bar">
+      <div>
+        <div class="prompt-title">语音触控</div>
+        <div class="prompt-help">可点色块，也可说：红色放星光线 / 我要停手 / 给我提示</div>
+      </div>
+      <input class="command-input" id="commandInput" placeholder="语音文字：红色放星光线" autocomplete="off">
+      <button class="primary-button" id="confirmButton">确认语音</button>
+      <button class="mic-button" id="micButton">麦克风</button>
+      <button class="secondary-button" id="passButton">停手</button>
+    </footer>
+  </main>
+
+  <script>
+    const colors = [
+      { id: "red", label: "红色勇气", short: "红", hex: "#e84d4f", effect: "bravery", childHint: "马上让一条线变亮，适合追分。" },
+      { id: "blue", label: "蓝色守护", short: "蓝", hex: "#3578e5", effect: "guard", childHint: "稳稳守住这条线，适合领先时使用。" },
+      { id: "yellow", label: "黄色灵感", short: "黄", hex: "#f4c542", effect: "inspire", childHint: "这次小亮一点，下一块会更强。" },
+      { id: "green", label: "绿色修复", short: "绿", hex: "#40a66b", effect: "repair", childHint: "照顾比较暗的那条线，让星阵更平衡。" },
+      { id: "purple", label: "紫色惊喜", short: "紫", hex: "#8b5ad6", effect: "surprise", childHint: "打开小星门，触发温和的惊喜效果。" }
+    ];
+
+    const lanes = {
+      star_lane: "星光线",
+      guard_lane: "守护线"
+    };
+
+    const state = {
+      round: 1,
+      turn: "child",
+      childWins: 0,
+      xingbaoWins: 0,
+      scores: {
+        child: { star_lane: 0, guard_lane: 0 },
+        xingbao: { star_lane: 0, guard_lane: 0 }
+      },
+      hands: {
+        child: Object.fromEntries(colors.map(color => [color.id, 1])),
+        xingbao: Object.fromEntries(colors.map(color => [color.id, 1]))
+      },
+      passed: { child: false, xingbao: false },
+      nextBonus: { child: 0, xingbao: 0 },
+      records: [],
+      log: ["等待孩子移动色块并说出指令。"],
+      gameOver: false,
+      avatar: "listening",
+      speech: "星阵已经开启，我在听你说话。",
+      voice: "正在聆听",
+      selectedColor: null
+    };
+
+    const aliases = {
+      red: ["红", "红色", "勇气", "红色勇气", "red"],
+      blue: ["蓝", "蓝色", "守护", "蓝色守护", "blue"],
+      yellow: ["黄", "黄色", "灵感", "黄色灵感", "yellow"],
+      green: ["绿", "绿色", "修复", "绿色修复", "green"],
+      purple: ["紫", "紫色", "惊喜", "紫色惊喜", "purple"]
+    };
+
+    const laneAliases = {
+      star_lane: ["星光", "星光线", "左", "左边", "左侧", "左上"],
+      guard_lane: ["守护", "守护线", "右", "右边", "右侧", "右下"]
+    };
+
+    const passAliases = ["停手", "不出", "结束", "收手", "过", "跳过", "本回合不出"];
+    const hintAliases = ["提示", "帮我", "建议", "怎么放", "放哪", "哪边", "想一想"];
+
+    const els = {
+      starfield: document.getElementById("starfield"),
+      lanes: document.getElementById("lanes"),
+      roundLabel: document.getElementById("roundLabel"),
+      matchScore: document.getElementById("matchScore"),
+      turnState: document.getElementById("turnState"),
+      childSlots: document.getElementById("childSlots"),
+      xingbaoSlots: document.getElementById("xingbaoSlots"),
+      totalScore: document.getElementById("totalScore"),
+      starStrength: document.getElementById("starStrength"),
+      guardStrength: document.getElementById("guardStrength"),
+      speech: document.getElementById("speech"),
+      avatar: document.getElementById("avatar"),
+      commandInput: document.getElementById("commandInput"),
+      confirmButton: document.getElementById("confirmButton"),
+      passButton: document.getElementById("passButton"),
+      micButton: document.getElementById("micButton"),
+      chips: document.getElementById("chips"),
+      eventLog: document.getElementById("eventLog")
+    };
+
+    const particles = Array.from({ length: 150 }, (_, index) => ({
+      x: fract(Math.sin(index * 12.9898) * 43758.5453),
+      y: fract(Math.sin(index * 78.233) * 24634.6345),
+      r: 1 + fract(Math.sin(index * 41.21) * 9.13) * 2.4,
+      s: 0.2 + fract(Math.sin(index * 31.77) * 17.1) * 0.8
+    }));
+
+    let phase = 0;
+    let recognizer = null;
+
+    function fract(value) {
+      return value - Math.floor(value);
+    }
+
+    function total(player) {
+      return state.scores[player].star_lane + state.scores[player].guard_lane;
+    }
+
+    function lanePower(lane) {
+      return Math.min(1, (state.scores.child[lane] + state.scores.xingbao[lane]) / 16);
+    }
+
+    function strengthName(power) {
+      if (power < 0.22) return "微光";
+      if (power < 0.45) return "稳定流动";
+      if (power < 0.7) return "能量增强";
+      if (power < 0.92) return "脉冲";
+      return "星阵爆发";
+    }
+
+    function parseCommand(text) {
+      const normalized = text.trim().toLowerCase().replace(/\s+/g, "");
+      if (!normalized) return { intent: "unknown", message: "我还没有听清楚。" };
+      if (passAliases.some(alias => normalized.includes(alias))) return { intent: "pass" };
+      if (hintAliases.some(alias => normalized.includes(alias))) return { intent: "hint" };
+      const color = findAlias(normalized, aliases);
+      const lane = findAlias(normalized, laneAliases);
+      if (color && lane) return { intent: "play", color, lane };
+      if (color) return { intent: "unknown", message: "我听到了颜色，还需要知道放到星光线还是守护线。" };
+      if (lane) return { intent: "unknown", message: "我听到了战线，还需要知道是哪一个颜色。" };
+      return { intent: "unknown", message: "可以说：红色放星光线，或者我要停手。" };
+    }
+
+    function findAlias(text, table) {
+      for (const [key, list] of Object.entries(table)) {
+        if (list.some(alias => text.includes(alias.toLowerCase()))) return key;
+      }
+      return null;
+    }
+
+    function childPlay(colorId, laneId) {
+      if (state.gameOver || state.turn !== "child") return say("现在还不能这样出块。", "confused");
+      const result = play("child", colorId, laneId);
+      handleResult(result);
+    }
+
+    function play(player, colorId, laneId) {
+      if (!state.hands[player][colorId]) return { ok: false, message: "这个颜色的方块已经用完啦。" };
+      const color = colors.find(item => item.id === colorId);
+      const before = total(player);
+      state.hands[player][colorId] -= 1;
+      let message = applyEffect(player, color, laneId);
+      const points = total(player) - before;
+      state.records.push({ player, colorId, laneId, points });
+      state.passed[player] = false;
+      return { ok: true, message, laneId };
+    }
+
+    function applyEffect(player, color, laneId) {
+      const actor = player === "child" ? "你" : "星宝";
+      if (state.nextBonus[player]) {
+        state.scores[player][laneId] += state.nextBonus[player];
+        state.nextBonus[player] = 0;
+      }
+      const prefix = `${actor}把${color.label}放到${lanes[laneId]}。`;
+      if (color.effect === "bravery") {
+        state.scores[player][laneId] += 4;
+        return `${prefix}勇气爆发，得 4 分！`;
+      }
+      if (color.effect === "guard") {
+        state.scores[player][laneId] += 3;
+        return `${prefix}守护能量稳定展开，得 3 分。`;
+      }
+      if (color.effect === "inspire") {
+        state.scores[player][laneId] += 2;
+        state.nextBonus[player] += 2;
+        return `${prefix}灵感亮起，下次出块额外加 2 分。`;
+      }
+      if (color.effect === "repair") {
+        const weak = state.scores[player].star_lane <= state.scores[player].guard_lane ? "star_lane" : "guard_lane";
+        state.scores[player][laneId] += 2;
+        state.scores[player][weak] += 2;
+        return `${prefix}修复能量流向较弱战线，两处都变亮。`;
+      }
+      if (color.effect === "surprise") {
+        const options = ["star_lane", "guard_lane", "both"];
+        const pick = options[(state.records.length + state.round) % options.length];
+        if (pick === "both") {
+          state.scores[player].star_lane += 1;
+          state.scores[player].guard_lane += 1;
+          return `${prefix}惊喜分给两条战线，各得 1 分。`;
+        }
+        state.scores[player][pick] += 3;
+        return `${prefix}惊喜落在${lanes[pick]}，得 3 分。`;
+      }
+      state.scores[player][laneId] += 1;
+      return `${prefix}星阵轻轻亮起。`;
+    }
+
+    function childPass() {
+      if (state.gameOver || state.turn !== "child") return;
+      state.passed.child = true;
+      handleResult({ ok: true, message: "孩子停手，星宝开始观察局势。" });
+    }
+
+    function xingbaoTurn() {
+      state.avatar = "thinking";
+      state.voice = "星宝正在思考";
+      render();
+      setTimeout(() => {
+        if (shouldXingbaoPass()) {
+          state.passed.xingbao = true;
+          handleResult({ ok: true, message: "星宝停手，把最后的判断交给星阵。" });
+          return;
+        }
+        const move = chooseXingbaoMove();
+        const result = play("xingbao", move.color, move.lane);
+        handleResult(result);
+      }, 700);
+    }
+
+    function shouldXingbaoPass() {
+      const hasBlocks = Object.values(state.hands.xingbao).some(Boolean);
+      if (!hasBlocks) return true;
+      if (state.passed.child && total("xingbao") > total("child")) return true;
+      return total("xingbao") - total("child") >= 5;
+    }
+
+    function chooseXingbaoMove() {
+      const available = colors.filter(color => state.hands.xingbao[color.id] > 0).map(color => color.id);
+      const weakLane = state.scores.xingbao.star_lane <= state.scores.xingbao.guard_lane ? "star_lane" : "guard_lane";
+      const order = total("xingbao") < total("child")
+        ? ["red", "green", "purple", "blue", "yellow"]
+        : ["blue", "yellow", "green", "purple", "red"];
+      return { color: order.find(color => available.includes(color)) || available[0], lane: weakLane };
+    }
+
+    function handleResult(result) {
+      if (!result.ok) {
+        say(result.message, "confused");
+        return;
+      }
+      if (roundShouldEnd()) {
+        finishRound();
+        render();
+        return;
+      }
+      state.turn = state.turn === "child" ? "xingbao" : "child";
+      const avatarState = result.laneId === "star_lane" ? "point-left" : result.laneId === "guard_lane" ? "point-right" : "confirm";
+      say(result.message, state.turn === "xingbao" ? avatarState : "confirm");
+      if (state.turn === "xingbao") xingbaoTurn();
+      else {
+        state.voice = "正在聆听";
+        render();
+      }
+    }
+
+    function roundShouldEnd() {
+      const empty = player => Object.values(state.hands[player]).every(count => count === 0);
+      return (state.passed.child && state.passed.xingbao) || (empty("child") && empty("xingbao"));
+    }
+
+    function finishRound() {
+      const childTotal = total("child");
+      const xingbaoTotal = total("xingbao");
+      let winner = "tie";
+      if (childTotal > xingbaoTotal) winner = "child";
+      if (xingbaoTotal > childTotal) winner = "xingbao";
+      if (winner === "child") state.childWins += 1;
+      if (winner === "xingbao") state.xingbaoWins += 1;
+      if (state.childWins >= 2 || state.xingbaoWins >= 2 || state.round >= 3) {
+        state.gameOver = true;
+        const finalText = state.childWins > state.xingbaoWins
+          ? "你赢下整局啦，星宝为你转圈庆祝！"
+          : state.xingbaoWins > state.childWins
+            ? "星宝赢下整局，但它也在给你加油。"
+            : "整局打成平手，星阵保持平衡。";
+        say(finalText, state.childWins >= state.xingbaoWins ? "celebrate" : "comfort");
+        state.voice = "游戏结束";
+        log(finalText);
+        return;
+      }
+      const text = winner === "child" ? "这一回合你领先，新的星阵开始。" : winner === "xingbao" ? "这一回合星宝领先，但你还有机会。" : "这一回合平手，新的星阵开始。";
+      state.round += 1;
+      resetRound();
+      say(text, winner === "child" ? "celebrate" : "comfort");
+      state.voice = "正在聆听";
+      log(text);
+    }
+
+    function resetRound() {
+      state.turn = "child";
+      state.scores = {
+        child: { star_lane: 0, guard_lane: 0 },
+        xingbao: { star_lane: 0, guard_lane: 0 }
+      };
+      state.hands = {
+        child: Object.fromEntries(colors.map(color => [color.id, 1])),
+        xingbao: Object.fromEntries(colors.map(color => [color.id, 1]))
+      };
+      state.passed = { child: false, xingbao: false };
+      state.nextBonus = { child: 0, xingbao: 0 };
+      state.records = [];
+    }
+
+    function hint() {
+      if (state.scores.child.star_lane <= state.scores.child.guard_lane) {
+        say("星光线现在偏弱，可以考虑把红色或绿色放到星光线。", "thinking");
+      } else {
+        say("守护线现在偏弱，可以考虑把蓝色或绿色放到守护线。", "thinking");
+      }
+    }
+
+    function say(text, avatar = "listening") {
+      state.speech = text;
+      state.avatar = avatar;
+      log(text);
+      render();
+    }
+
+    function log(text) {
+      state.log.unshift(text);
+      state.log = state.log.slice(0, 5);
+    }
+
+    function render() {
+      els.roundLabel.textContent = `第 ${state.round} 回合`;
+      els.matchScore.textContent = `孩子 ${state.childWins} : ${state.xingbaoWins} 星宝`;
+      els.turnState.textContent = `${state.turn === "child" ? "轮到孩子" : "星宝回合"} · ${state.voice}`;
+      els.totalScore.textContent = `${total("child")} : ${total("xingbao")}`;
+      els.starStrength.textContent = `${strengthName(lanePower("star_lane"))} · ${state.scores.child.star_lane + state.scores.xingbao.star_lane} 能量`;
+      els.guardStrength.textContent = `${strengthName(lanePower("guard_lane"))} · ${state.scores.child.guard_lane + state.scores.xingbao.guard_lane} 能量`;
+      els.speech.textContent = state.speech;
+      els.avatar.className = `avatar ${state.avatar}`;
+      renderSlots(els.childSlots, "star_lane");
+      renderSlots(els.xingbaoSlots, "guard_lane");
+      renderChips();
+      els.eventLog.innerHTML = `<strong>牌局记录</strong><br>${state.log.map(item => escapeHtml(item)).join("<br>")}`;
+    }
+
+    function renderSlots(container, laneId) {
+      const records = state.records.filter(record => record.laneId === laneId);
+      container.innerHTML = colors.map((color, index) => {
+        const record = records[index];
+        const filled = Boolean(record);
+        const active = filled ? colors.find(item => item.id === record.colorId) : color;
+        const label = filled ? active.short : color.short;
+        const owner = filled ? `<span class="owner">${record.player === "child" ? "你" : "星宝"}</span>` : "";
+        const points = filled ? `<span class="points">+${record.points}</span>` : "";
+        const selectable = !filled && state.selectedColor && state.turn === "child" && !state.gameOver;
+        return `<button class="slot ${filled ? "filled" : ""} ${selectable ? "selectable" : ""}" style="--rim:${active.hex}" data-lane="${laneId}" data-index="${index}">${label}${owner}${points}</button>`;
+      }).join("");
+      container.querySelectorAll(".slot").forEach(slot => {
+        slot.addEventListener("click", () => placeSelectedOnLane(slot.dataset.lane));
+      });
+    }
+
+    function renderChips() {
+      els.chips.innerHTML = colors.map(color => {
+        const count = state.hands.child[color.id] || 0;
+        const selected = state.selectedColor === color.id;
+        return `<button class="chip ${selected ? "selected" : ""}" style="--chip:${color.hex}" data-color="${color.id}">
+          <span class="chip-dot"></span>${color.label} × ${count}
+        </button>`;
+      }).join("");
+      els.chips.querySelectorAll(".chip").forEach(button => {
+        button.addEventListener("click", () => {
+          selectColor(button.dataset.color);
+        });
+        button.addEventListener("pointerdown", () => {
+          const color = colors.find(item => item.id === button.dataset.color);
+          window.clearTimeout(button.holdTimer);
+          button.holdTimer = window.setTimeout(() => say(`${color.label}：${color.childHint}`, "thinking"), 520);
+        });
+        button.addEventListener("pointerup", () => window.clearTimeout(button.holdTimer));
+        button.addEventListener("pointerleave", () => window.clearTimeout(button.holdTimer));
+      });
+    }
+
+    function selectColor(colorId) {
+      if (state.gameOver || state.turn !== "child") return say("先等星宝这一手结束，再选择色块。", "comfort");
+      if (!state.hands.child[colorId]) return say("这个颜色已经用过啦，换一个还亮着的色块吧。", "confused");
+      state.selectedColor = colorId;
+      const color = colors.find(item => item.id === colorId);
+      els.commandInput.value = `${color.short}色放星光线`;
+      say(`已选${color.label}。现在点星光线或守护线的空格，也可以直接说出来。`, "listening");
+    }
+
+    function placeSelectedOnLane(laneId) {
+      if (!state.selectedColor) return say("先点一个颜色方块，再点战线空格。", "thinking");
+      const color = colors.find(item => item.id === state.selectedColor);
+      els.commandInput.value = `${color.short}色放${lanes[laneId]}`;
+      const selected = state.selectedColor;
+      state.selectedColor = null;
+      childPlay(selected, laneId);
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
+    }
+
+    function resizeCanvas(canvas) {
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(window.innerWidth * ratio);
+      canvas.height = Math.floor(window.innerHeight * ratio);
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      const ctx = canvas.getContext("2d");
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      return ctx;
+    }
+
+    function draw() {
+      phase += 0.016;
+      drawStarfield();
+      drawLanes();
+      requestAnimationFrame(draw);
+    }
+
+    function drawStarfield() {
+      const ctx = resizeCanvas(els.starfield);
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      ctx.clearRect(0, 0, width, height);
+      for (const point of particles) {
+        const x = (point.x * width + Math.sin(phase * point.s + point.y * 8) * 9 + width) % width;
+        const y = point.y * height;
+        const glow = 0.45 + Math.sin(phase * 2 * point.s + point.x * 8) * 0.25;
+        ctx.globalAlpha = 0.34 + glow * 0.42;
+        ctx.fillStyle = "#dbe7ff";
+        ctx.beginPath();
+        ctx.arc(x, y, point.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function drawLanes() {
+      const ctx = resizeCanvas(els.lanes);
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      ctx.clearRect(0, 0, width, height);
+      const center = { x: width * 0.5, y: height * 0.49 };
+      drawRibbon(ctx, [
+        { x: -width * 0.08, y: height * 0.77 },
+        { x: width * 0.16, y: height * 0.78 },
+        { x: width * 0.31, y: height * 0.62 },
+        center
+      ], "#f8c75d", lanePower("star_lane"), -1);
+      drawRibbon(ctx, [
+        center,
+        { x: width * 0.66, y: height * 0.42 },
+        { x: width * 0.82, y: height * 0.19 },
+        { x: width * 1.08, y: height * 0.17 }
+      ], "#5ce6ff", lanePower("guard_lane"), 1);
+      drawCoreSpark(ctx, center.x, center.y);
+    }
+
+    function drawRibbon(ctx, points, color, power, direction) {
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 20 + power * 34;
+      ctx.strokeStyle = color;
+      const curtainWidth = 82 + power * 78;
+      const veilLayers = [
+        { alpha: 0.06 + power * 0.05, width: curtainWidth * 1.15, offset: 0 },
+        { alpha: 0.08 + power * 0.05, width: curtainWidth * 0.72, offset: -18 },
+        { alpha: 0.07 + power * 0.05, width: curtainWidth * 0.56, offset: 24 }
+      ];
+      for (const layer of veilLayers) {
+        ctx.globalAlpha = layer.alpha;
+        ctx.lineWidth = layer.width;
+        ctx.shadowBlur = 44 + power * 42;
+        ribbonPath(ctx, points, layer.offset + Math.sin(phase * 0.7 + layer.width) * 7);
+        ctx.stroke();
+      }
+      const strandCount = 34 + Math.floor(power * 34);
+      for (let strand = 0; strand < strandCount; strand += 1) {
+        const spread = strandCount / 2;
+        const offset = (strand - spread) * (2.8 + power * 2.4);
+        const wave = Math.sin(phase * (0.9 + power) + strand * 0.42) * (12 + power * 15);
+        ctx.globalAlpha = 0.1 + power * 0.08 + (strand % 6 === 0 ? 0.24 : 0);
+        ctx.lineWidth = strand % 6 === 0 ? 2.2 + power * 2.8 : 0.65 + power * 1.5;
+        ctx.shadowBlur = strand % 6 === 0 ? 24 + power * 38 : 10 + power * 18;
+        ribbonPath(ctx, points, offset + wave);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 0.38 + power * 0.26;
+      ctx.lineWidth = 3 + power * 5;
+      ctx.shadowBlur = 36 + power * 44;
+      ribbonPath(ctx, points, Math.sin(phase * 1.2) * 4);
+      ctx.stroke();
+      const count = 58 + Math.floor(power * 72);
+      for (let index = 0; index < count; index += 1) {
+        const t = (phase * (0.14 + power * 0.16) * direction + index / count + 1) % 1;
+        const point = cubicPoint(points, t);
+        const normal = cubicNormal(points, t);
+        const drift = Math.sin(index * 1.7 + phase * 2) * (curtainWidth * 0.34);
+        const x = point.x + normal.x * drift;
+        const y = point.y + normal.y * drift;
+        const r = 0.8 + power * 2.6 + (index % 9 === 0 ? 3.2 : 0);
+        ctx.globalAlpha = index % 9 === 0 ? 0.95 : 0.42;
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      const flareCount = 7 + Math.floor(power * 6);
+      for (let index = 0; index < flareCount; index += 1) {
+        const t = (phase * 0.08 * direction + index / flareCount + 1) % 1;
+        const point = cubicPoint(points, t);
+        const radius = 9 + power * 13 + (index % 3) * 3;
+        const gradient = ctx.createRadialGradient(point.x, point.y, 0, point.x, point.y, radius);
+        gradient.addColorStop(0, "rgba(255,255,255,0.9)");
+        gradient.addColorStop(0.25, colorWithAlpha(color, 0.7));
+        gradient.addColorStop(1, colorWithAlpha(color, 0));
+        ctx.globalAlpha = 0.75;
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+    }
+
+    function ribbonPath(ctx, points, offset) {
+      const n0 = cubicNormal(points, 0);
+      const n1 = cubicNormal(points, 0.33);
+      const n2 = cubicNormal(points, 0.66);
+      const n3 = cubicNormal(points, 1);
+      ctx.beginPath();
+      ctx.moveTo(points[0].x + n0.x * offset, points[0].y + n0.y * offset);
+      ctx.bezierCurveTo(
+        points[1].x + n1.x * offset,
+        points[1].y + n1.y * offset,
+        points[2].x + n2.x * offset,
+        points[2].y + n2.y * offset,
+        points[3].x + n3.x * offset,
+        points[3].y + n3.y * offset
+      );
+    }
+
+    function cubicPoint(points, t) {
+      const mt = 1 - t;
+      return {
+        x: mt ** 3 * points[0].x + 3 * mt ** 2 * t * points[1].x + 3 * mt * t ** 2 * points[2].x + t ** 3 * points[3].x,
+        y: mt ** 3 * points[0].y + 3 * mt ** 2 * t * points[1].y + 3 * mt * t ** 2 * points[2].y + t ** 3 * points[3].y
+      };
+    }
+
+    function cubicNormal(points, t) {
+      const mt = 1 - t;
+      const dx = 3 * mt ** 2 * (points[1].x - points[0].x) + 6 * mt * t * (points[2].x - points[1].x) + 3 * t ** 2 * (points[3].x - points[2].x);
+      const dy = 3 * mt ** 2 * (points[1].y - points[0].y) + 6 * mt * t * (points[2].y - points[1].y) + 3 * t ** 2 * (points[3].y - points[2].y);
+      const len = Math.hypot(dx, dy) || 1;
+      return { x: -dy / len, y: dx / len };
+    }
+
+    function drawCoreSpark(ctx, x, y) {
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, 46);
+      gradient.addColorStop(0, "rgba(255,255,255,0.95)");
+      gradient.addColorStop(0.28, "rgba(248,199,93,0.7)");
+      gradient.addColorStop(0.58, "rgba(92,230,255,0.34)");
+      gradient.addColorStop(1, "rgba(92,230,255,0)");
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(x, y, 46, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function colorWithAlpha(hex, alpha) {
+      const normalized = hex.replace("#", "");
+      const r = parseInt(normalized.slice(0, 2), 16);
+      const g = parseInt(normalized.slice(2, 4), 16);
+      const b = parseInt(normalized.slice(4, 6), 16);
+      return `rgba(${r},${g},${b},${alpha})`;
+    }
+
+    els.confirmButton.addEventListener("click", () => {
+      const text = els.commandInput.value;
+      els.commandInput.value = "";
+      state.voice = text ? `听到：${text}` : "没有听清";
+      const command = parseCommand(text);
+      if (command.intent === "play") childPlay(command.color, command.lane);
+      else if (command.intent === "pass") childPass();
+      else if (command.intent === "hint") hint();
+      else say(command.message, "confused");
+      render();
+    });
+
+    els.passButton.addEventListener("click", childPass);
+    els.commandInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") els.confirmButton.click();
+    });
+
+    els.micButton.addEventListener("click", () => {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        say("这个浏览器暂时不支持直接语音识别，可以先用触控和文字输入继续玩。", "comfort");
+        return;
+      }
+      if (!recognizer) {
+        recognizer = new SpeechRecognition();
+        recognizer.lang = "zh-CN";
+        recognizer.interimResults = false;
+        recognizer.maxAlternatives = 1;
+        recognizer.onstart = () => {
+          state.voice = "正在听麦克风";
+          els.micButton.classList.add("listening");
+          els.micButton.textContent = "聆听中";
+          say("我在听，请说：红色放星光线。", "listening");
+        };
+        recognizer.onresult = event => {
+          const text = event.results[0][0].transcript;
+          els.commandInput.value = text;
+          els.confirmButton.click();
+        };
+        recognizer.onerror = () => {
+          say("麦克风这次没有听清楚，可以再说一遍。", "confused");
+        };
+        recognizer.onend = () => {
+          els.micButton.classList.remove("listening");
+          els.micButton.textContent = "麦克风";
+          if (!state.gameOver) state.voice = "正在聆听";
+          render();
+        };
+      }
+      recognizer.start();
+    });
+
+    window.addEventListener("resize", render);
+    render();
+    draw();
+  </script>
+</body>
+</html>

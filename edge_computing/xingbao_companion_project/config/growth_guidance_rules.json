@@ -1,0 +1,22 @@
+{
+  "topic_cooldown_seconds": 900,
+  "allowed_proactive_opportunities": [
+    "opening",
+    "idle_gap",
+    "after_game_finished",
+    "after_success",
+    "summary_ready",
+    "child_asked_what_to_do"
+  ],
+  "priority": {
+    "safety": 3,
+    "expression": 2,
+    "current_task": 1,
+    "proactive_topic": 0
+  },
+  "states_that_block_proactive_topic": [
+    "expression_scaffold",
+    "comforting",
+    "health_reminding"
+  ]
+}

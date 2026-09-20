@@ -1,0 +1,8 @@
+# SC171V3 conservative runtime: face distance + FERPlus emotion.
+# Object detection is disabled by XINGBAO_VISION_NO_OBJECTS=1 so Torch and
+# Ultralytics are not required on the board.
+numpy>=1.21,<2
+# OpenCV 4.12+ requires NumPy 2 on newer Python. Keep the conservative 4.x
+# range so the board's existing scientific/audio stack is not force-upgraded.
+opencv-python-headless>=4.8,<4.12
+mediapipe==0.10.9

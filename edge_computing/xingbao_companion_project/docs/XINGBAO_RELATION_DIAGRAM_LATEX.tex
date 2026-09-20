@@ -1,0 +1,137 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usetikzlibrary{arrows.meta,backgrounds,fit,positioning,shadows.blur}
+
+\setmainfont{Arial}
+\setCJKmainfont{Microsoft YaHei}
+
+\definecolor{InputBlue}{HTML}{24B7D3}
+\definecolor{CoreBlue}{HTML}{3456D1}
+\definecolor{CloudPurple}{HTML}{7C5CFC}
+\definecolor{OutputOrange}{HTML}{FF9E45}
+\definecolor{MemoryGreen}{HTML}{36B37E}
+\definecolor{PowerRed}{HTML}{E85D75}
+\definecolor{PanelGray}{HTML}{F5F7FB}
+\definecolor{TextDark}{HTML}{24324A}
+\definecolor{LineGray}{HTML}{8792A6}
+
+\begin{document}
+\begin{tikzpicture}[
+  font=\small,
+  node distance=8mm and 17mm,
+  module/.style={
+    rounded corners=3pt,
+    minimum width=38mm,
+    minimum height=14mm,
+    align=center,
+    text=TextDark,
+    draw=#1,
+    line width=0.9pt,
+    fill=#1!8,
+    blur shadow={shadow blur steps=5,shadow opacity=16}
+  },
+  core/.style={
+    rounded corners=4pt,
+    minimum width=56mm,
+    minimum height=29mm,
+    align=center,
+    text=white,
+    fill=CoreBlue,
+    draw=CoreBlue,
+    line width=1.2pt,
+    blur shadow={shadow blur steps=6,shadow opacity=22}
+  },
+  group/.style={
+    rounded corners=6pt,
+    fill=PanelGray,
+    draw=#1!45,
+    line width=0.8pt,
+    inner sep=7mm
+  },
+  data/.style={-{Stealth[length=2.6mm]},draw=CoreBlue,line width=1.15pt},
+  audio/.style={-{Stealth[length=2.6mm]},draw=CloudPurple,line width=1.15pt},
+  vision/.style={-{Stealth[length=2.6mm]},draw=MemoryGreen,line width=1.1pt,dashed},
+  network/.style={{Stealth[length=2.6mm]}-{Stealth[length=2.6mm]},draw=CloudPurple,line width=1.2pt},
+  power/.style={-{Stealth[length=2.6mm]},draw=PowerRed,line width=1.7pt},
+  structure/.style={draw=LineGray,line width=0.9pt,densely dotted},
+  labelbox/.style={fill=white,inner sep=1.5pt,text=TextDark,font=\scriptsize}
+]
+
+% Core
+\node[core] (board) {\Large\bfseries SC171 V3\\[2pt]
+  \normalsize 核心计算与交互调度平台\\[-1pt]
+  \scriptsize 本地唤醒 · VAD · 多模态融合 · 游戏调度 · 安全策略};
+
+% Input layer
+\node[module=InputBlue, left=31mm of board, yshift=18mm] (mic)
+  {\bfseries USB 麦克风\\\scriptsize 唤醒 · 语音 · 插话输入};
+\node[module=InputBlue, left=31mm of board] (touch)
+  {\bfseries 触控输入\\\scriptsize 点击 · 拖拽 · 选择};
+\node[module=MemoryGreen, left=31mm of board, yshift=-18mm] (camera)
+  {\bfseries USB 摄像头\\\scriptsize 距离检测 · 视觉感知};
+
+% Output layer
+\node[module=OutputOrange, right=31mm of board, yshift=12mm] (display)
+  {\bfseries 22.5 英寸触控屏\\\scriptsize 星宝形象 · 游戏 · 提示};
+\node[module=OutputOrange, right=31mm of board, yshift=-12mm] (speaker)
+  {\bfseries 声卡 / 功放 / 扬声器\\\scriptsize 回复 · 提示音 · 鼓励语音};
+
+% Cloud layer
+\node[module=CloudPurple, above=25mm of board, minimum width=68mm] (cloud)
+  {\bfseries 云端智能服务\\\scriptsize ASR 语音识别 · Qwen 大模型 · TTS 语音合成};
+
+% Foundation layer
+\node[module=PowerRed, below=27mm of board, xshift=-34mm] (powerbus)
+  {\bfseries 电源适配与分配\\\scriptsize 核心板 · 屏幕 · 音频设备};
+\node[module=LineGray, below=27mm of board, xshift=34mm] (table)
+  {\bfseries 纸箱桌体与教具区\\\scriptsize 固定 · 承载 · 分区 · 走线};
+
+% Main relations
+\draw[audio] (mic.east) -- node[labelbox,above]{USB 音频输入} (board.west |- mic.east);
+\draw[data] (touch.east) -- node[labelbox,above]{触控数据回传} (board.west);
+\draw[vision] (camera.east) -- node[labelbox,below]{USB 视频输入（扩展）} (board.west |- camera.east);
+
+\draw[data] (board.east |- display.west) -- node[labelbox,above]{显示信号} (display.west);
+\draw[audio] (board.east |- speaker.west) -- node[labelbox,below]{音频输出} (speaker.west);
+\draw[data] (display.south west) to[out=220,in=0]
+  node[labelbox,below]{触控控制} (board.south east);
+
+\draw[network] (board.north) -- node[labelbox,right]{Wi-Fi / LAN · HTTPS / WebSocket} (cloud.south);
+
+\draw[power] (powerbus.north) -- node[labelbox,left]{直流供电} (board.south west);
+\draw[power] (powerbus.west) -| node[labelbox,pos=.25,below]{供电} (mic.south);
+\draw[power] (powerbus.east) -| node[labelbox,pos=.25,below]{供电} (speaker.south);
+\draw[power] (powerbus.east) -| (display.south);
+
+\draw[structure] (table.north) -- node[labelbox,right]{固定 / 承载} (board.south east);
+\draw[structure] (table.east) -| (display.south east);
+\draw[structure] (table.west) -| (camera.south);
+
+% Acoustic interference
+\draw[PowerRed,dashed,-{Stealth[length=2.4mm]},line width=1pt]
+  (speaker.south east) to[out=-35,in=-35,looseness=1.15]
+  node[labelbox,below,text=PowerRed]{声学回声 / 串音} (mic.south west);
+
+% Group panels
+\begin{scope}[on background layer]
+  \node[group=InputBlue,fit=(mic)(touch)(camera),label={[text=InputBlue,font=\bfseries]above:感知输入层}] {};
+  \node[group=OutputOrange,fit=(display)(speaker),label={[text=OutputOrange,font=\bfseries]above:反馈输出层}] {};
+  \node[group=CloudPurple,fit=(cloud),label={[text=CloudPurple,font=\bfseries]above:网络服务层}] {};
+  \node[group=LineGray,fit=(powerbus)(table),label={[text=LineGray,font=\bfseries]below:电源与结构层}] {};
+\end{scope}
+
+% Legend
+\matrix[below=13mm of powerbus, xshift=34mm, column sep=6mm, row sep=2mm,
+  nodes={font=\scriptsize,text=TextDark,anchor=west}] {
+  \draw[data] (0,0)--(8mm,0); & \node {当前数据连接}; &
+  \draw[audio] (0,0)--(8mm,0); & \node {音频链路}; &
+  \draw[vision] (0,0)--(8mm,0); & \node {扩展能力}; \\
+  \draw[power] (0,0)--(8mm,0); & \node {供电关系}; &
+  \draw[structure] (0,0)--(8mm,0); & \node {固定/承载}; &
+  \draw[PowerRed,dashed,-{Stealth[length=2mm]}] (0,0)--(8mm,0); & \node {干扰关系}; \\
+};
+
+\end{tikzpicture}
+\end{document}

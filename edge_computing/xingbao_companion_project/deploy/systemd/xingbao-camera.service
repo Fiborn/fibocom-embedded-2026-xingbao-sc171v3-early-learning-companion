@@ -1,0 +1,16 @@
+[Unit]
+Description=Xingbao USB camera MJPEG supervisor
+After=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fibo/xingbao_companion_unified
+Environment=HOME=/home/fibo
+EnvironmentFile=-/home/fibo/.config/xingbao/runtime.env
+ExecStart=/bin/sh deploy/start_camera_stream.sh
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

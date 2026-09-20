@@ -1,0 +1,11 @@
+{
+  "type": "vision_state",
+  "source": "vision",
+  "payload": {
+    "state": "face_too_close",
+    "confidence": 0.9,
+    "duration_seconds": 3,
+    "zone": "center",
+    "simulated": true
+  }
+}

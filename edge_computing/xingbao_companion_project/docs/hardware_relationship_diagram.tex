@@ -1,0 +1,320 @@
+% !TeX program = xelatex
+% 星宝智能儿童早教陪伴桌——比赛汇报硬件关系图
+% 推荐使用 XeLaTeX 编译；也可直接上传 Overleaf。
+\documentclass[UTF8,12pt]{ctexart}
+
+\usepackage[
+  paperwidth=40.64cm,
+  paperheight=22.86cm,
+  margin=0cm
+]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows.meta,
+  backgrounds,
+  calc,
+  fit,
+  positioning
+}
+\usepackage{xcolor}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ---------- 配色 ----------
+\definecolor{Ink}{HTML}{263238}
+\definecolor{Muted}{HTML}{607D8B}
+\definecolor{LineGray}{HTML}{CFD8DC}
+\definecolor{SoftGray}{HTML}{F5F7F8}
+\definecolor{CoreBlue}{HTML}{2859D6}
+\definecolor{CoreBlueDark}{HTML}{173E9F}
+\definecolor{DataBlue}{HTML}{2F6FED}
+\definecolor{AudioPurple}{HTML}{7A52C7}
+\definecolor{VisionGreen}{HTML}{2B9A66}
+\definecolor{PowerRed}{HTML}{D94B4B}
+\definecolor{StructureGray}{HTML}{8B99A1}
+\definecolor{WarningOrange}{HTML}{E8892F}
+\definecolor{CloudCyan}{HTML}{E8F7FA}
+\definecolor{TouchBlue}{HTML}{EAF1FF}
+\definecolor{AudioLilac}{HTML}{F3EDFC}
+\definecolor{VisionMint}{HTML}{EAF7F0}
+\definecolor{PowerPink}{HTML}{FCEEEE}
+\definecolor{ArmCream}{HTML}{FFF4E0}
+\definecolor{ArmOrange}{HTML}{E88A21}
+
+% ---------- TikZ 样式 ----------
+\tikzset{
+  module/.style={
+    draw=LineGray,
+    line width=0.8pt,
+    rounded corners=5pt,
+    fill=white,
+    align=center,
+    text=Ink,
+    inner sep=7pt,
+    minimum height=1.75cm,
+    font=\fontsize{10.5}{13}\selectfont
+  },
+  core/.style={
+    module,
+    draw=CoreBlueDark,
+    line width=1.4pt,
+    fill=CoreBlue,
+    text=white,
+    minimum width=5.7cm,
+    minimum height=3.15cm,
+    font=\fontsize{12}{15}\selectfont
+  },
+  data/.style={
+    -{Latex[length=3.0mm,width=2.0mm]},
+    draw=DataBlue,
+    line width=1.25pt
+  },
+  audio/.style={
+    -{Latex[length=3.0mm,width=2.0mm]},
+    draw=AudioPurple,
+    line width=1.25pt
+  },
+  vision/.style={
+    -{Latex[length=3.0mm,width=2.0mm]},
+    draw=VisionGreen,
+    line width=1.25pt,
+    dashed
+  },
+  network/.style={
+    {Latex[length=3.0mm,width=2.0mm]}-{Latex[length=3.0mm,width=2.0mm]},
+    draw=DataBlue,
+    line width=1.25pt
+  },
+  power/.style={
+    -{Latex[length=2.8mm,width=1.9mm]},
+    draw=PowerRed,
+    line width=1.35pt
+  },
+  action/.style={
+    -{Latex[length=3.0mm,width=2.0mm]},
+    draw=ArmOrange,
+    line width=1.25pt
+  },
+  relationlabel/.style={
+    fill=white,
+    text=Muted,
+    inner sep=2.5pt,
+    rounded corners=2pt,
+    font=\fontsize{7.8}{9.6}\selectfont,
+    align=center
+  },
+  number/.style={
+    circle,
+    minimum size=0.78cm,
+    inner sep=0pt,
+    fill=CoreBlue,
+    text=white,
+    font=\bfseries\fontsize{10}{10}\selectfont
+  }
+}
+
+\begin{document}
+\mbox{}
+
+\begin{tikzpicture}[
+  remember picture,
+  overlay,
+  shift={(current page.south west)},
+  x=1cm,
+  y=1cm
+]
+
+% ---------- 页面背景与标题 ----------
+\fill[white] (0,0) rectangle (40.64,22.86);
+\fill[CoreBlue] (0,20.35) rectangle (0.34,22.86);
+\node[anchor=north west,text=Ink,font=\bfseries\fontsize{25}{30}\selectfont]
+  at (1.15,21.95) {1. 硬件设计};
+\node[anchor=north west,text=Muted,font=\fontsize{10}{13}\selectfont]
+  at (1.2,20.75) {星宝智能儿童早教陪伴桌 · 多模态硬件关系与交互闭环};
+
+% 左右分栏
+\draw[LineGray,line width=0.8pt] (25.55,1.0) -- (25.55,20.25);
+
+% ---------- 左侧：硬件关系总图 ----------
+\node[anchor=north west,text=CoreBlueDark,font=\bfseries\fontsize{11}{14}\selectfont]
+  at (1.15,19.85) {硬件关系总图};
+
+% 节点
+\node[module,fill=CloudCyan,minimum width=6.2cm] (cloud) at (13.05,18.0)
+  {\textbf{云端智能服务}\\[-1pt]
+   \footnotesize ASR · 大模型服务 · TTS};
+
+\node[module,fill=AudioLilac,minimum width=4.8cm] (mic) at (3.85,14.95)
+  {\textbf{USB 麦克风}\\[-1pt]
+   \footnotesize 语音采集 · 唤醒 · 插话};
+
+\node[module,fill=VisionMint,minimum width=4.8cm] (camera) at (3.85,10.75)
+  {\textbf{USB 摄像头（扩展）}\\[-1pt]
+   \footnotesize 距离检测 · 桌面感知};
+
+\node[module,fill=SoftGray,minimum width=4.8cm,minimum height=2.15cm] (child) at (3.85,6.35)
+  {\textbf{儿童与实体教具}\\[-1pt]
+   \footnotesize 说话 · 触摸 · 摆放色块/卡片};
+
+\node[core] (board) at (13.05,12.75)
+  {\textbf{SC171 V3 核心计算平台}\\[3pt]
+   \footnotesize 交互调度 · 本地计算\\[-1pt]
+   \footnotesize 多模态融合 · 网络通信};
+
+\node[module,fill=TouchBlue,minimum width=5.15cm,minimum height=2.4cm] (screen) at (21.7,15.1)
+  {\textbf{22.5 英寸触控屏}\\[-1pt]
+   \footnotesize 角色 · 内容 · 游戏\\[-1pt]
+   \footnotesize 点击 · 拖拽 · 选择};
+
+\node[module,fill=AudioLilac,minimum width=5.15cm,minimum height=2.2cm] (speaker) at (21.7,9.65)
+  {\textbf{声卡 / 功放 / 扬声器}\\[-1pt]
+   \footnotesize 回复 · 提示音 · 鼓励语音};
+
+\node[module,fill=ArmCream,draw=ArmOrange,minimum width=3.85cm,minimum height=1.55cm] (armctrl) at (18.55,6.45)
+  {\textbf{机械臂控制模块}\\[-1pt]
+   \footnotesize 动作接收 · 映射 · 限位};
+
+\node[module,fill=ArmCream,draw=ArmOrange,minimum width=3.75cm,minimum height=1.55cm] (arm) at (23.05,6.45)
+  {\textbf{桌面机械臂}\\[-1pt]
+   \footnotesize 点头 · 摇头 · 挥手 · 指向};
+
+\node[module,fill=PowerPink,draw=PowerRed,minimum width=5.5cm,minimum height=1.45cm] (adapter)
+  at (13.05,4.55)
+  {\textbf{安全电源适配器 / 直流供电分配}};
+
+% 纸箱桌体结构边界（置于背景层）
+\begin{scope}[on background layer]
+  \node[
+    draw=StructureGray,
+    line width=1.0pt,
+    dashed,
+    rounded corners=10pt,
+    fill=SoftGray,
+    fill opacity=0.27,
+    inner sep=10pt,
+    fit=(mic)(camera)(child)(board)(screen)(speaker)(armctrl)(arm)
+  ] (deskframe) {};
+\end{scope}
+\node[
+  anchor=south west,
+  fill=white,
+  text=StructureGray,
+  font=\bfseries\fontsize{8.5}{10}\selectfont,
+  inner sep=2pt
+] at ($(deskframe.south west)+(0.35,0.10)$)
+  {纸箱桌体：固定承载 · 空间分区 · 线缆整理};
+
+% 数据与功能连接
+\draw[audio] (mic.east) -- node[relationlabel,above]{USB 音频输入＋供电} (board.west |- mic.east);
+\draw[vision] (camera.east) -- node[relationlabel,above]{USB 视频输入＋供电} (board.west |- camera.east);
+
+\draw[data] ($(board.east)+(0,0.55)$) -- node[relationlabel,above]{显示信号} ($(screen.west)+(0,-0.42)$);
+\draw[data] ($(screen.west)+(0,0.42)$) -- node[relationlabel,above]{触控数据回传} ($(board.east)+(0,1.15)$);
+
+\draw[audio] (board.east |- speaker.west) -- node[relationlabel,above]{音频输出} (speaker.west);
+\draw[network] (board.north) -- node[relationlabel,right]{Wi-Fi / LAN\\双向通信} (cloud.south);
+\draw[action] (board.south) -- ++(0,-1.55) -| node[relationlabel,pos=0.72,above]{高层动作指令\\arm\_action} (armctrl.north);
+\draw[action] (armctrl.east) -- node[relationlabel,above]{动作组执行\\安全限位} (arm.west);
+
+% 儿童、实体桌面与输入输出的交叉关系
+\draw[audio] (child.north west) to[out=125,in=-90]
+  node[relationlabel,left]{儿童语音} (mic.south);
+\draw[vision] (child.north east) to[out=65,in=-90]
+  node[relationlabel,right]{儿童状态/教具画面} (camera.south);
+\draw[data] (child.east) -- ++(1.0,0) |- node[relationlabel,pos=0.70,below]{触控操作} (screen.south);
+\draw[data] (screen.south east) to[out=-45,in=20]
+  node[relationlabel,right]{画面反馈} (child.east);
+\draw[audio] (speaker.south west) to[out=-150,in=5]
+  node[relationlabel,below]{语音反馈} (child.east);
+\draw[action] (arm.south west) to[out=-165,in=5,looseness=0.85]
+  node[relationlabel,below]{动作反馈 / 空间指向} (child.east);
+\draw[StructureGray,dashed,line width=1.0pt]
+  (arm.south) -- ++(0,-1.10)
+  node[relationlabel,text=StructureGray,below]{固定在纸箱桌体};
+
+% 电源母线及分支
+\draw[PowerRed,line width=1.8pt] (6.5,3.2) -- (23.9,3.2);
+\node[relationlabel,text=PowerRed,fill=white] at (8.0,3.53) {直流供电母线};
+\draw[power] (adapter.south) -- (13.05,3.2);
+\draw[power] (9.2,3.2) |- (board.south);
+\draw[power] (20.0,3.2) |- (screen.south);
+\draw[power] (22.6,3.2) |- (speaker.south);
+\draw[power] (18.6,3.2) |- (armctrl.south);
+\draw[power] (23.05,3.2) |- (arm.south);
+
+% 负向耦合关系：扬声器回声进入麦克风
+\draw[
+  -{Latex[length=2.6mm,width=1.8mm]},
+  draw=WarningOrange,
+  line width=1.0pt,
+  densely dotted
+] (speaker.north) to[out=125,in=55,looseness=1.05]
+  node[relationlabel,text=WarningOrange,above]{声学回声/串音耦合} (mic.north);
+
+% 图例（直接绘制，避免嵌套 tikzpicture）
+\draw[data] (1.15,1.15) -- (1.90,1.15);
+\node[anchor=west,font=\fontsize{7.8}{9.5}\selectfont,text=Muted] at (2.02,1.15) {当前数据};
+\draw[audio] (4.00,1.15) -- (4.75,1.15);
+\node[anchor=west,font=\fontsize{7.8}{9.5}\selectfont,text=Muted] at (4.87,1.15) {音频};
+\draw[vision] (6.15,1.15) -- (6.90,1.15);
+\node[anchor=west,font=\fontsize{7.8}{9.5}\selectfont,text=Muted] at (7.02,1.15) {视觉扩展};
+\draw[power] (9.35,1.15) -- (10.10,1.15);
+\node[anchor=west,font=\fontsize{7.8}{9.5}\selectfont,text=Muted] at (10.22,1.15) {供电};
+\draw[action] (11.85,1.15) -- (12.60,1.15);
+\node[anchor=west,font=\fontsize{7.8}{9.5}\selectfont,text=Muted] at (12.72,1.15) {机械动作};
+\draw[StructureGray,dashed,line width=1pt] (14.40,1.15) -- (15.15,1.15);
+\node[anchor=west,font=\fontsize{7.8}{9.5}\selectfont,text=Muted] at (15.27,1.15) {结构承载};
+
+% ---------- 右侧：核心部件及作用 ----------
+\node[anchor=north west,text=CoreBlueDark,font=\bfseries\fontsize{11}{14}\selectfont]
+  at (26.45,19.85) {核心部件及作用};
+
+\node[number] at (27.0,18.05) {1};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.7}{12.8}\selectfont]
+  at (27.65,18.05)
+  {\textbf{SC171 V3 核心计算平台}\\
+   统一处理语音、触控、视觉与小游戏事件，并完成本地计算、交互调度和网络通信。};
+
+\node[number] at (27.0,15.25) {2};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.7}{12.8}\selectfont]
+  at (27.65,15.25)
+  {\textbf{22.5 英寸触控屏}\\
+   既输出星宝形象、学习内容和游戏画面，也回传点击、拖拽、选择等触控操作。};
+
+\node[number] at (27.0,12.45) {3};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.7}{12.8}\selectfont]
+  at (27.65,12.45)
+  {\textbf{语音交互模块}\\
+   USB 麦克风采集儿童语音，声卡和扬声器播放回复，形成“听取—理解—回应”闭环。};
+
+\node[number] at (27.0,9.65) {4};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.7}{12.8}\selectfont]
+  at (27.65,9.65)
+  {\textbf{视觉感知扩展模块}\\
+   摄像头用于距离检测、健康提醒和后续桌面实体教具识别，不作为基础交互的强制依赖。};
+
+\node[number] at (27.0,6.85) {5};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.7}{12.8}\selectfont]
+  at (27.65,6.85)
+  {\textbf{供电与网络模块}\\
+   电源系统向核心板、屏幕和音频设备分支供电；Wi-Fi/LAN 提供云端智能服务连接。};
+
+\node[number] at (27.0,4.05) {6};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.7}{12.8}\selectfont]
+  at (27.65,4.05)
+  {\textbf{纸箱桌体原型结构}\\
+   完成硬件固定、线缆整理和屏幕区/教具区划分，用于验证儿童桌面交互形态。};
+
+\node[number] at (27.0,1.75) {7};
+\node[anchor=west,text width=11.5cm,align=left,text=Ink,font=\fontsize{9.2}{12.0}\selectfont]
+  at (27.65,1.75)
+  {\textbf{机械臂实体反馈模块}\\
+   接收高层动作指令，完成挥手、点头、摇头、左右指向和小幅庆祝，与语音和屏幕形成实体陪伴反馈。};
+
+% 页脚提示
+\node[anchor=south east,text=Muted,font=\fontsize{7.2}{9}\selectfont]
+  at (39.6,0.75)
+  {实线：当前能力\quad 虚线：扩展能力\quad 未确认电压与接口须按实物补充};
+
+\end{tikzpicture}
+\end{document}

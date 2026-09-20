@@ -1,0 +1,373 @@
+{
+  "actions": {
+    "bow": {
+      "cooldown_seconds": 1.5,
+      "delay_seconds": 0.05,
+      "description": "弯腰：下、上、复位",
+      "estimated_duration_seconds": 2.4160000000000004,
+      "max_duration_seconds": 3.5,
+      "poses": [
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": 12.571428571428571,
+          "gripper.pos": 3.380187416331995,
+          "shoulder_lift.pos": -45.45054945054945,
+          "shoulder_pan.pos": -1.4945054945054945,
+          "wrist_flex.pos": -21.36263736263736,
+          "wrist_roll.pos": 79.2967032967033
+        },
+        {
+          "elbow_flex.pos": -23.78021978021978,
+          "gripper.pos": 3.380187416331995,
+          "shoulder_lift.pos": -45.75824175824176,
+          "shoulder_pan.pos": -1.4945054945054945,
+          "wrist_flex.pos": -21.36263736263736,
+          "wrist_roll.pos": 79.2967032967033
+        }
+      ],
+      "segment_profiles": [
+        {
+          "delay_seconds": 0.03333333333333333,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 24
+        },
+        {
+          "delay_seconds": 0.03333333333333333,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 24
+        },
+        {
+          "delay_seconds": 0.034,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 24
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        0
+      ],
+      "smoothstep": true,
+      "status": "approved",
+      "steps": 8
+    },
+    "high_five": {
+      "cooldown_seconds": 6.0,
+      "delay_seconds": 0.02,
+      "description": "击掌：复位、击掌、很慢复位",
+      "estimated_duration_seconds": 8.075,
+      "max_duration_seconds": 9.0,
+      "poses": [
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -17.714285714285715,
+          "gripper.pos": 51.606425702811244,
+          "shoulder_lift.pos": 2.9450549450549453,
+          "shoulder_pan.pos": -0.6153846153846154,
+          "wrist_flex.pos": -51.16483516483517,
+          "wrist_roll.pos": 79.34065934065934
+        }
+      ],
+      "segment_profiles": [
+        {
+          "delay_seconds": 0.025,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 3
+        },
+        {
+          "delay_seconds": 0.03333333333333333,
+          "hold_after_seconds": 4.0,
+          "smoothstep": false,
+          "steps": 60
+        },
+        {
+          "delay_seconds": 0.03333333333333333,
+          "hold_after_seconds": 0.0,
+          "smoothstep": false,
+          "steps": 60
+        }
+      ],
+      "sequence": [
+        0,
+        1,
+        0
+      ],
+      "smoothstep": true,
+      "status": "approved",
+      "steps": 5
+    },
+    "mouth": {
+      "cooldown_seconds": 1.5,
+      "delay_seconds": 0.05,
+      "description": "嘴巴：张嘴、闭嘴各两次，再复位",
+      "estimated_duration_seconds": 2.0,
+      "max_duration_seconds": 3.5,
+      "poses": [
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 32.53012048192771,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 1.2048192771084338,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        }
+      ],
+      "segment_profiles": [
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        1,
+        2,
+        0
+      ],
+      "smoothstep": true,
+      "status": "approved",
+      "steps": 8
+    },
+    "nod": {
+      "cooldown_seconds": 1.5,
+      "delay_seconds": 0.05,
+      "description": "点头：上、下各两次，再复位",
+      "estimated_duration_seconds": 2.0,
+      "max_duration_seconds": 3.5,
+      "poses": [
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -46.24175824175824,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -23.296703296703296,
+          "wrist_roll.pos": 79.34065934065934
+        }
+      ],
+      "segment_profiles": [
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        },
+        {
+          "delay_seconds": 0.05,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 8
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        1,
+        2,
+        0
+      ],
+      "smoothstep": true,
+      "status": "approved",
+      "steps": 8
+    },
+    "shake_head": {
+      "cooldown_seconds": 1.5,
+      "delay_seconds": 0.05,
+      "description": "摇头：左、右各两次，再复位",
+      "estimated_duration_seconds": 4.422,
+      "max_duration_seconds": 5.2,
+      "poses": [
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -2.2857142857142856,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": -28.483516483516482,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        },
+        {
+          "elbow_flex.pos": -11.384615384615385,
+          "gripper.pos": 3.4805890227576977,
+          "shoulder_lift.pos": -47.51648351648352,
+          "shoulder_pan.pos": 21.802197802197803,
+          "wrist_flex.pos": -16.263736263736263,
+          "wrist_roll.pos": 79.34065934065934
+        }
+      ],
+      "segment_profiles": [
+        {
+          "delay_seconds": 0.041,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 22
+        },
+        {
+          "delay_seconds": 0.04,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 22
+        },
+        {
+          "delay_seconds": 0.04,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 22
+        },
+        {
+          "delay_seconds": 0.04,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 22
+        },
+        {
+          "delay_seconds": 0.04,
+          "hold_after_seconds": 0.0,
+          "smoothstep": true,
+          "steps": 22
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        1,
+        2,
+        0
+      ],
+      "smoothstep": true,
+      "status": "approved",
+      "steps": 8
+    }
+  },
+  "neutral_pose": {
+    "elbow_flex.pos": -11.384615384615385,
+    "gripper.pos": 3.4805890227576977,
+    "shoulder_lift.pos": -47.51648351648352,
+    "shoulder_pan.pos": -2.2857142857142856,
+    "wrist_flex.pos": -16.263736263736263,
+    "wrist_roll.pos": 79.34065934065934
+  },
+  "safety": {
+    "cooldown_seconds": 1.5,
+    "max_delay_seconds": 0.08,
+    "max_delta_degrees": {
+      "elbow_flex.pos": 35.0,
+      "gripper.pos": 35.0,
+      "shoulder_lift.pos": 30.0,
+      "shoulder_pan.pos": 55.0,
+      "wrist_flex.pos": 70.0,
+      "wrist_roll.pos": 45.0
+    },
+    "max_duration_seconds": 1.0,
+    "max_pose_count": 3,
+    "max_sequence_length": 5,
+    "max_steps": 10,
+    "min_delay_seconds": 0.01,
+    "min_expression_delta_degrees": 1.0,
+    "min_pose_separation_degrees": 2.0,
+    "min_steps": 3,
+    "neutral_tolerance_degrees": 5.0
+  },
+  "schema_version": 1
+}

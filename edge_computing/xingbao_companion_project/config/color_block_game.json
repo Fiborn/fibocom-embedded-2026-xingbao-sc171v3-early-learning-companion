@@ -1,0 +1,53 @@
+{
+  "rounds_to_win": 2,
+  "max_rounds": 3,
+  "lanes": [
+    {
+      "id": "star_lane",
+      "label": "星光线"
+    },
+    {
+      "id": "guard_lane",
+      "label": "守护线"
+    }
+  ],
+  "starting_hand": {
+    "red": 1,
+    "blue": 1,
+    "yellow": 1,
+    "green": 1,
+    "purple": 1
+  },
+  "colors": [
+    {
+      "id": "red",
+      "label": "红色勇气",
+      "hex": "#e84d4f",
+      "effect": "bravery"
+    },
+    {
+      "id": "blue",
+      "label": "蓝色守护",
+      "hex": "#3578e5",
+      "effect": "guard"
+    },
+    {
+      "id": "yellow",
+      "label": "黄色灵感",
+      "hex": "#f4c542",
+      "effect": "inspire"
+    },
+    {
+      "id": "green",
+      "label": "绿色修复",
+      "hex": "#40a66b",
+      "effect": "repair"
+    },
+    {
+      "id": "purple",
+      "label": "紫色惊喜",
+      "hex": "#8b5ad6",
+      "effect": "surprise"
+    }
+  ]
+}

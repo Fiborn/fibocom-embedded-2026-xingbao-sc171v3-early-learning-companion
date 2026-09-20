@@ -1,0 +1,19 @@
+[Unit]
+Description=Xingbao central voice, guided expression, game speech, and vision
+After=graphical-session.target network-online.target xingbao-unified-ui.service xingbao-camera.service
+Wants=network-online.target xingbao-unified-ui.service xingbao-camera.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fibo/xingbao_companion_unified
+Environment=HOME=/home/fibo
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/home/fibo/.config/xingbao/runtime.env
+ExecStart=/bin/sh deploy/board_start_demo.sh
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target graphical-session.target

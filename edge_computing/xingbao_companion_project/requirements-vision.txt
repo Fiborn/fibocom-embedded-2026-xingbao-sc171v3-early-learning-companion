@@ -1,0 +1,6 @@
+# Optional dependencies for the standalone vision runtime.
+# The core text, voice, touch, game, and arm paths do not import these packages.
+numpy>=1.26
+opencv-python>=4.8,<5
+ultralytics>=8.3
+mediapipe==0.10.9

@@ -1,0 +1,772 @@
+[
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/main_title_xingbao_companion_desk.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/subtitle_ai_star_partner_touch_exploration_system.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/sc171v3_aiot_companion_console.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/module_color_energy_cabin.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/module_geometry_starmap_cabin.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/module_memory_route_cabin.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/game_find_color.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/game_recognize_shape.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "01_titles_and_game_names",
+    "file": "01_titles_and_game_names/game_memory_route.png",
+    "source": "未来科技ui界面设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_local_large.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_touch_large.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_safe_large.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_ready.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_local_mode.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_touch_ready.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_session_active.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_companion_core.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_mission_deck.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_touch_task.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_5_rounds.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_target_locked.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/button_select.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_auto_save.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/button_demo_mode.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_local_small.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_touch_small.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_safe_small.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "02_status_chips_and_buttons",
+    "file": "02_status_chips_and_buttons/status_demo_running_cn.png",
+    "source": "未来科技ui徽标与按钮设计.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_red_cn.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_yellow_cn.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_blue_cn.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_red_en.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_yellow_en.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_blue_en.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_green_cn.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_purple_cn.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_orange_cn.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_green_en.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_purple_en.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/color_orange_en.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/prompt_lock_target.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/prompt_please_find.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/prompt_choose_matching_color_energy.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "03_color_labels",
+    "file": "03_color_labels/banner_target_blue.png",
+    "source": "未来科技能量标签合集.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_circle_cn.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_square_cn.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_triangle_cn.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_star_cn.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_heart_cn.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_circle_en.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_square_en.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_triangle_en.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_star_en.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/shape_heart_en.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/prompt_target_shape.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/prompt_observe_shape_signal.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "04_shape_labels",
+    "file": "04_shape_labels/banner_target_square.png",
+    "source": "未来科技几何信号界面.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/prompt_remember_order.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/prompt_repeat_route_order.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/title_interstellar_task_report.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/title_today_companion_data.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_current_level.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_stars_gained_this_round.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_energy_increase.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_rounds_completed.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_success_count.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_total_attempts.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_recent_game.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_today_stars.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_energy_value.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/label_starcore_stable.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/prompt_choose_one_module.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/prompt_hello_i_am_xingbao.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/feedback_success.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "05_report_panels",
+    "file": "05_report_panels/feedback_try_again.png",
+    "source": "未来科技风格ui面板合集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_lock_target.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_choose_matching_color_energy.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_lock_target_shape.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_observe_geometry_signal.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_remember_order.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_repeat_route_order.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_target_locked_en.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_select_en.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_feedback_success.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_try_again.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_interstellar_task_report.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_today_companion_data.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_stars_gained_this_round.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_energy_increase.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_current_level.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_rounds_completed.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_success_count.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_total_attempts.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_recent_game.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_local_saved.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_auto_saved.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_save_now.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_demo_running.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_round_1_of_5.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_round_2_of_5.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_round_3_of_5.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_round_4_of_5.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "06_lightweight_line_labels",
+    "file": "06_lightweight_line_labels/light_round_5_of_5.png",
+    "source": "未来科技ui元素集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_main_title_xingbao.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_subtitle_ai_partner_touch_system.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_sc171v3_aiot_console.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_local_mode.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_touch_ready.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_session_active.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_companion_core.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_mission_deck.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_module_color_energy_cabin.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_module_geometry_cabin.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_module_memory_route_cabin.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_game_recognize_color_energy.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_game_discover_geometry.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_game_light_route.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_button_demo_mode.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_button_today_records.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_button_system_exit.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_ready.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_touch_task.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_5_rounds.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_local.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "07_flat_label_sheet",
+    "file": "07_flat_label_sheet/flat_safe.png",
+    "source": "未来科技ui设计标签集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_yellow_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_blue_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_purple_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_orange_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_green_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_red_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_yellow_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_blue_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_orange_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_red_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_purple_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_color_green_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_star_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_circle_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_triangle_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_heart_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_square_cn.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_circle_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_square_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_star_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_triangle_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_shape_heart_en.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_level_lv1.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_starcore_stable.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_today_stars.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_energy_value.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_prompt_hello_xingbao.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_prompt_choose_module.png",
+    "source": "未来感ui设计元素合集.png"
+  },
+  {
+    "sheet": "08_mixed_element_sheet",
+    "file": "08_mixed_element_sheet/mix_button_return_console.png",
+    "source": "未来感ui设计元素合集.png"
+  }
+]

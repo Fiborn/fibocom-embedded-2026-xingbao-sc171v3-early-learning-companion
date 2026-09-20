@@ -1,0 +1,48 @@
+{
+  "profiles": [
+    {
+      "id": "xingbao_daily",
+      "label": "日常星宝",
+      "model": "cosyvoice-v3-flash",
+      "voice": "longanyang",
+      "sample_rate": 24000,
+      "volume": 85,
+      "rate": 1.0,
+      "quick_ack_text": "星宝收到啦，我想一想。",
+      "description": "默认对话声音，适合日常陪伴和普通问答。"
+    },
+    {
+      "id": "xingbao_soft",
+      "label": "安慰星宝",
+      "model": "cosyvoice-v3-flash",
+      "voice": "longxiaochun",
+      "sample_rate": 24000,
+      "volume": 62,
+      "rate": 0.92,
+      "quick_ack_text": "星宝在听呢，慢慢说。",
+      "description": "更轻、更慢，适合情绪安抚、睡前聊天和低刺激场景。"
+    },
+    {
+      "id": "xingbao_story",
+      "label": "故事星宝",
+      "model": "cosyvoice-v3-flash",
+      "voice": "longxiaoxia",
+      "sample_rate": 24000,
+      "volume": 74,
+      "rate": 0.96,
+      "quick_ack_text": "好呀，星宝准备讲给你听。",
+      "description": "更有讲述感，适合故事、科普和较长回答。"
+    },
+    {
+      "id": "xingbao_prompt",
+      "label": "提示星宝",
+      "model": "cosyvoice-v3-flash",
+      "voice": "longwan",
+      "sample_rate": 24000,
+      "volume": 76,
+      "rate": 1.08,
+      "quick_ack_text": "收到，星宝马上处理。",
+      "description": "更短促清晰，适合系统提示、状态播报和功能执行反馈。"
+    }
+  ]
+}

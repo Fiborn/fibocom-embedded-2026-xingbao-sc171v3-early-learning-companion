@@ -1,0 +1,26 @@
+{
+  "copied": 1487,
+  "redacted": [
+    {
+      "path": "pc5.py",
+      "count": 1
+    },
+    {
+      "path": "multimodal\\vision_system\\scene_description.py",
+      "count": 1
+    }
+  ],
+  "excluded_groups": [
+    "original Git history",
+    "experiment",
+    "coordination",
+    "backups",
+    "backup",
+    "work",
+    "logs",
+    "Log",
+    "data",
+    "virtual environments and caches",
+    "runtime saves"
+  ]
+}

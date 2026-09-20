@@ -1,0 +1,856 @@
+{
+  "version": "2026-07-08",
+  "source": "kids_visual_tools_share_20260708.zip",
+  "tools": [
+    {
+      "no": 1,
+      "title": "起床/睡觉提醒",
+      "purpose": "培养作息习惯",
+      "kind": "sunmoon",
+      "slug": "routine",
+      "color": "#f6c85f",
+      "category": "生活流程",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_routine_thumb.png"
+    },
+    {
+      "no": 2,
+      "title": "喝水打卡",
+      "purpose": "记录今天喝了几杯水",
+      "kind": "water",
+      "slug": "water",
+      "color": "#00a8e8",
+      "category": "生活流程",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_water_thumb.png"
+    },
+    {
+      "no": 3,
+      "title": "午睡白噪音",
+      "purpose": "播放雨声、风声、海浪声",
+      "kind": "player:noise",
+      "slug": "noise",
+      "color": "#5dade2",
+      "category": "音频故事",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_noise_thumb.png"
+    },
+    {
+      "no": 4,
+      "title": "儿童呼吸放松",
+      "purpose": "情绪激动时跟着呼吸",
+      "kind": "breath",
+      "slug": "breath",
+      "color": "#6bcf7f",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_breath_thumb.png"
+    },
+    {
+      "no": 5,
+      "title": "今日心情选择",
+      "purpose": "孩子选择开心、生气、难过等",
+      "kind": "mood",
+      "slug": "mood",
+      "color": "#ffb703",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_mood_thumb.png"
+    },
+    {
+      "no": 6,
+      "title": "情绪安抚卡",
+      "purpose": "告诉孩子我可以深呼吸、抱抱玩偶",
+      "kind": "cards:calm",
+      "slug": "calm",
+      "color": "#90be6d",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_calm_thumb.png"
+    },
+    {
+      "no": 7,
+      "title": "颜色认知卡",
+      "purpose": "学习红黄蓝绿等颜色",
+      "kind": "cards:colors",
+      "slug": "colors",
+      "color": "#e76f51",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_colors_thumb.png"
+    },
+    {
+      "no": 8,
+      "title": "形状认知卡",
+      "purpose": "学习圆形、三角形、方形",
+      "kind": "cards:shapes",
+      "slug": "shapes",
+      "color": "#43aa8b",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_shapes_thumb.png"
+    },
+    {
+      "no": 9,
+      "title": "数字认知卡",
+      "purpose": "学习1到10",
+      "kind": "cards:numbers",
+      "slug": "numbers",
+      "color": "#577590",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_numbers_thumb.png"
+    },
+    {
+      "no": 10,
+      "title": "字母/拼音卡",
+      "purpose": "认识简单字母或拼音",
+      "kind": "cards:letters",
+      "slug": "letters",
+      "color": "#8e7cc3",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_letters_thumb.png"
+    },
+    {
+      "no": 11,
+      "title": "动物认知卡",
+      "purpose": "看动物、听叫声",
+      "kind": "cards:animals",
+      "slug": "animals",
+      "color": "#bc6c25",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_animals_thumb.png"
+    },
+    {
+      "no": 12,
+      "title": "水果蔬菜认知",
+      "purpose": "认识常见食物",
+      "kind": "cards:foods",
+      "slug": "foods",
+      "color": "#80b918",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_foods_thumb.png"
+    },
+    {
+      "no": 13,
+      "title": "交通工具认知",
+      "purpose": "认识汽车、飞机、火车",
+      "kind": "cards:transport",
+      "slug": "transport",
+      "color": "#277da1",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_transport_thumb.png"
+    },
+    {
+      "no": 14,
+      "title": "职业认知卡",
+      "purpose": "医生、老师、消防员等",
+      "kind": "cards:careers",
+      "slug": "careers",
+      "color": "#c77dff",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_careers_thumb.png"
+    },
+    {
+      "no": 15,
+      "title": "儿歌播放器",
+      "purpose": "播放常用儿歌",
+      "kind": "player:songs",
+      "slug": "songs",
+      "color": "#ffafcc",
+      "category": "音频故事",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_songs_thumb.png"
+    },
+    {
+      "no": 16,
+      "title": "故事播放器",
+      "purpose": "播放睡前故事、绘本音频",
+      "kind": "player:stories",
+      "slug": "stories",
+      "color": "#b56576",
+      "category": "音频故事",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_stories_thumb.png"
+    },
+    {
+      "no": 17,
+      "title": "绘本翻页器",
+      "purpose": "简单电子绘本阅读",
+      "kind": "storybook",
+      "slug": "storybook",
+      "color": "#00b4d8",
+      "category": "音频故事",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_storybook_thumb.png"
+    },
+    {
+      "no": 18,
+      "title": "儿童画板",
+      "purpose": "涂鸦、画画",
+      "kind": "drawing",
+      "slug": "draw",
+      "color": "#f94144",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_draw_thumb.png"
+    },
+    {
+      "no": 19,
+      "title": "涂色板",
+      "purpose": "给简单图案上色",
+      "kind": "coloring",
+      "slug": "coloring",
+      "color": "#f8961e",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_coloring_thumb.png"
+    },
+    {
+      "no": 20,
+      "title": "贴纸拼图板",
+      "purpose": "拖动贴纸装饰画面",
+      "kind": "stickers",
+      "slug": "stickers",
+      "color": "#43aa8b",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_stickers_thumb.png"
+    },
+    {
+      "no": 21,
+      "title": "简单拼图",
+      "purpose": "2到6块拼图",
+      "kind": "game:puzzle",
+      "slug": "puzzle",
+      "color": "#577590",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_puzzle_thumb.png"
+    },
+    {
+      "no": 22,
+      "title": "找不同",
+      "purpose": "两张图找简单差异",
+      "kind": "game:spot",
+      "slug": "spot",
+      "color": "#f3722c",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_spot_thumb.png"
+    },
+    {
+      "no": 23,
+      "title": "配对游戏",
+      "purpose": "动物和影子、水果和颜色配对",
+      "kind": "game:match",
+      "slug": "matching",
+      "color": "#90be6d",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_matching_thumb.png"
+    },
+    {
+      "no": 24,
+      "title": "记忆翻牌",
+      "purpose": "翻两张相同卡片",
+      "kind": "game:memory",
+      "slug": "memory",
+      "color": "#277da1",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_memory_thumb.png"
+    },
+    {
+      "no": 25,
+      "title": "排序小游戏",
+      "purpose": "大小、高矮、多少排序",
+      "kind": "game:sort",
+      "slug": "sorting",
+      "color": "#9b5de5",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_sorting_thumb.png"
+    },
+    {
+      "no": 26,
+      "title": "数数小游戏",
+      "purpose": "点数小动物数量",
+      "kind": "game:count",
+      "slug": "counting",
+      "color": "#00bbf9",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_counting_thumb.png"
+    },
+    {
+      "no": 27,
+      "title": "分类小游戏",
+      "purpose": "把动物、水果、玩具分类",
+      "kind": "game:classify",
+      "slug": "classify",
+      "color": "#00f5d4",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_classify_thumb.png"
+    },
+    {
+      "no": 28,
+      "title": "儿童抽签器",
+      "purpose": "抽今天的小任务、小奖励",
+      "kind": "game:lottery",
+      "slug": "lottery",
+      "color": "#f15bb5",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_lottery_thumb.png"
+    },
+    {
+      "no": 29,
+      "title": "小奖励转盘",
+      "purpose": "奖励贴纸、讲故事、抱抱等",
+      "kind": "game:wheel",
+      "slug": "wheel",
+      "color": "#fee440",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_wheel_thumb.png"
+    },
+    {
+      "no": 30,
+      "title": "班级点名器",
+      "purpose": "幼儿园老师点名用",
+      "kind": "attendance",
+      "slug": "attendance",
+      "color": "#00c2a8",
+      "category": "班级管理",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_attendance_thumb.png"
+    },
+    {
+      "no": 31,
+      "title": "今日值日生",
+      "purpose": "随机选择小帮手",
+      "kind": "helper",
+      "slug": "helper",
+      "color": "#f48c06",
+      "category": "班级管理",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_helper_thumb.png"
+    },
+    {
+      "no": 32,
+      "title": "排队分组器",
+      "purpose": "把孩子分成红队、蓝队等",
+      "kind": "groups",
+      "slug": "groups",
+      "color": "#3a86ff",
+      "category": "班级管理",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_groups_thumb.png"
+    },
+    {
+      "no": 33,
+      "title": "安全提示卡",
+      "purpose": "不碰插座、不乱跑、过马路等",
+      "kind": "cards:safety",
+      "slug": "safety",
+      "color": "#ef476f",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_safety_thumb.png"
+    },
+    {
+      "no": 34,
+      "title": "成长小星星",
+      "purpose": "完成任务获得星星",
+      "kind": "stars",
+      "slug": "stars",
+      "color": "#ffbe0b",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_stars_thumb.png"
+    },
+    {
+      "no": 35,
+      "title": "出门准备提醒",
+      "purpose": "鞋子、水杯、帽子逐项准备",
+      "kind": "cards:safety",
+      "slug": "go_out_ready",
+      "color": "#38bdf8",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_go_out_ready_thumb.png"
+    },
+    {
+      "no": 36,
+      "title": "拥抱提醒器",
+      "purpose": "随机提醒一个温柔互动",
+      "kind": "game:lottery",
+      "slug": "hug_picker",
+      "color": "#fb7185",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_hug_picker_thumb.png"
+    },
+    {
+      "no": 37,
+      "title": "家务小帮手",
+      "purpose": "抽取擦桌子、摆碗筷等小任务",
+      "kind": "game:lottery",
+      "slug": "chore_picker",
+      "color": "#f59e0b",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_chore_picker_thumb.png"
+    },
+    {
+      "no": 38,
+      "title": "睡前流程卡",
+      "purpose": "刷牙、换睡衣、听故事",
+      "kind": "cards:calm",
+      "slug": "bedtime_cards",
+      "color": "#6366f1",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_bedtime_cards_thumb.png"
+    },
+    {
+      "no": 39,
+      "title": "早晨流程卡",
+      "purpose": "起床、穿衣、吃早餐",
+      "kind": "cards:safety",
+      "slug": "morning_cards",
+      "color": "#facc15",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_morning_cards_thumb.png"
+    },
+    {
+      "no": 40,
+      "title": "幼儿规则卡",
+      "purpose": "排队、轻声、轮流玩",
+      "kind": "cards:safety",
+      "slug": "class_rules",
+      "color": "#0ea5e9",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_class_rules_thumb.png"
+    },
+    {
+      "no": 41,
+      "title": "餐桌礼仪卡",
+      "purpose": "坐好、小口吃、谢谢帮忙",
+      "kind": "cards:calm",
+      "slug": "table_manners",
+      "color": "#f97316",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_table_manners_thumb.png"
+    },
+    {
+      "no": 42,
+      "title": "分享轮流卡",
+      "purpose": "提醒孩子等待和轮流",
+      "kind": "cards:calm",
+      "slug": "sharing_cards",
+      "color": "#84cc16",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_sharing_cards_thumb.png"
+    },
+    {
+      "no": 43,
+      "title": "礼貌用语卡",
+      "purpose": "谢谢、请、对不起、没关系",
+      "kind": "cards:letters",
+      "slug": "polite_words",
+      "color": "#f472b6",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_polite_words_thumb.png"
+    },
+    {
+      "no": 44,
+      "title": "天气认知卡",
+      "purpose": "晴天、雨天、刮风、下雪",
+      "kind": "cards:colors",
+      "slug": "weather_cards",
+      "color": "#38bdf8",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_weather_cards_thumb.png"
+    },
+    {
+      "no": 45,
+      "title": "季节认知卡",
+      "purpose": "春夏秋冬的简单认识",
+      "kind": "cards:colors",
+      "slug": "season_cards",
+      "color": "#22c55e",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_season_cards_thumb.png"
+    },
+    {
+      "no": 46,
+      "title": "身体部位卡",
+      "purpose": "认识眼睛、耳朵、手和脚",
+      "kind": "cards:animals",
+      "slug": "body_cards",
+      "color": "#fb923c",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_body_cards_thumb.png"
+    },
+    {
+      "no": 47,
+      "title": "家庭成员卡",
+      "purpose": "爸爸妈妈、爷爷奶奶等称呼",
+      "kind": "cards:letters",
+      "slug": "family_cards",
+      "color": "#f9a8d4",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_family_cards_thumb.png"
+    },
+    {
+      "no": 48,
+      "title": "房间物品卡",
+      "purpose": "床、桌子、椅子、灯",
+      "kind": "cards:shapes",
+      "slug": "room_cards",
+      "color": "#94a3b8",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_room_cards_thumb.png"
+    },
+    {
+      "no": 49,
+      "title": "衣物认知卡",
+      "purpose": "帽子、鞋子、袜子、外套",
+      "kind": "cards:colors",
+      "slug": "clothes_cards",
+      "color": "#60a5fa",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_clothes_cards_thumb.png"
+    },
+    {
+      "no": 50,
+      "title": "玩具认知卡",
+      "purpose": "积木、皮球、小车、玩偶",
+      "kind": "cards:shapes",
+      "slug": "toy_cards",
+      "color": "#fbbf24",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_toy_cards_thumb.png"
+    },
+    {
+      "no": 51,
+      "title": "乐器认知卡",
+      "purpose": "鼓、琴、铃铛、喇叭",
+      "kind": "cards:animals",
+      "slug": "music_cards",
+      "color": "#c084fc",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_music_cards_thumb.png"
+    },
+    {
+      "no": 52,
+      "title": "空间方位卡",
+      "purpose": "上、下、里、外",
+      "kind": "cards:shapes",
+      "slug": "position_cards",
+      "color": "#2dd4bf",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_position_cards_thumb.png"
+    },
+    {
+      "no": 53,
+      "title": "反义词卡",
+      "purpose": "大和小、高和矮、多和少",
+      "kind": "cards:letters",
+      "slug": "opposite_cards",
+      "color": "#fb7185",
+      "category": "认知学习",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_opposite_cards_thumb.png"
+    },
+    {
+      "no": 54,
+      "title": "表情模仿卡",
+      "purpose": "模仿开心、惊讶、困困",
+      "kind": "mood",
+      "slug": "face_mimic",
+      "color": "#facc15",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_face_mimic_thumb.png"
+    },
+    {
+      "no": 55,
+      "title": "勇敢尝试卡",
+      "purpose": "鼓励孩子试一小口、走一步",
+      "kind": "cards:calm",
+      "slug": "brave_cards",
+      "color": "#4ade80",
+      "category": "情绪安抚",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_brave_cards_thumb.png"
+    },
+    {
+      "no": 56,
+      "title": "谢谢打卡",
+      "purpose": "记录今天说谢谢的次数",
+      "kind": "stars",
+      "slug": "thanks_stars",
+      "color": "#fde047",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_thanks_stars_thumb.png"
+    },
+    {
+      "no": 57,
+      "title": "阅读星星墙",
+      "purpose": "读完一本书点亮一颗星",
+      "kind": "stars",
+      "slug": "reading_stars",
+      "color": "#fbbf24",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_reading_stars_thumb.png"
+    },
+    {
+      "no": 58,
+      "title": "刷牙星星墙",
+      "purpose": "坚持刷牙收集星星",
+      "kind": "stars",
+      "slug": "tooth_stars",
+      "color": "#7dd3fc",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_tooth_stars_thumb.png"
+    },
+    {
+      "no": 59,
+      "title": "早睡星星墙",
+      "purpose": "按时睡觉获得星星",
+      "kind": "stars",
+      "slug": "sleep_stars",
+      "color": "#a78bfa",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_sleep_stars_thumb.png"
+    },
+    {
+      "no": 60,
+      "title": "如厕星星墙",
+      "purpose": "主动如厕获得星星",
+      "kind": "stars",
+      "slug": "toilet_stars",
+      "color": "#c4b5fd",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_toilet_stars_thumb.png"
+    },
+    {
+      "no": 61,
+      "title": "吃菜打卡",
+      "purpose": "鼓励尝试蔬菜和水果",
+      "kind": "stars",
+      "slug": "veggie_stars",
+      "color": "#86efac",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_veggie_stars_thumb.png"
+    },
+    {
+      "no": 62,
+      "title": "牛奶打卡",
+      "purpose": "记录今天喝奶情况",
+      "kind": "water",
+      "slug": "milk_tracker",
+      "color": "#93c5fd",
+      "category": "生活流程",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_milk_tracker_thumb.png"
+    },
+    {
+      "no": 63,
+      "title": "户外活动打卡",
+      "purpose": "记录跑跳、散步、晒太阳",
+      "kind": "stars",
+      "slug": "outdoor_stars",
+      "color": "#22c55e",
+      "category": "成长奖励",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_outdoor_stars_thumb.png"
+    },
+    {
+      "no": 64,
+      "title": "课堂奖励转盘",
+      "purpose": "抽取班级小奖励",
+      "kind": "game:wheel",
+      "slug": "class_reward_wheel",
+      "color": "#fde047",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_class_reward_wheel_thumb.png"
+    },
+    {
+      "no": 65,
+      "title": "亲子游戏转盘",
+      "purpose": "抽一个亲子小游戏",
+      "kind": "game:wheel",
+      "slug": "family_game_wheel",
+      "color": "#fb7185",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_family_game_wheel_thumb.png"
+    },
+    {
+      "no": 66,
+      "title": "故事主题转盘",
+      "purpose": "抽今晚故事主题",
+      "kind": "game:wheel",
+      "slug": "story_wheel",
+      "color": "#c084fc",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_story_wheel_thumb.png"
+    },
+    {
+      "no": 67,
+      "title": "运动动作转盘",
+      "purpose": "抽跳跃、拍手、转圈等动作",
+      "kind": "game:wheel",
+      "slug": "movement_wheel",
+      "color": "#34d399",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_movement_wheel_thumb.png"
+    },
+    {
+      "no": 68,
+      "title": "颜色寻宝游戏",
+      "purpose": "找一找房间里的指定颜色",
+      "kind": "game:lottery",
+      "slug": "color_hunt",
+      "color": "#f97316",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_color_hunt_thumb.png"
+    },
+    {
+      "no": 69,
+      "title": "形状寻宝游戏",
+      "purpose": "找圆形、方形、三角形物品",
+      "kind": "game:lottery",
+      "slug": "shape_hunt",
+      "color": "#2dd4bf",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_shape_hunt_thumb.png"
+    },
+    {
+      "no": 70,
+      "title": "声音猜猜看",
+      "purpose": "抽取生活声音做模仿",
+      "kind": "game:lottery",
+      "slug": "sound_guess",
+      "color": "#38bdf8",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_sound_guess_thumb.png"
+    },
+    {
+      "no": 71,
+      "title": "动物动作模仿",
+      "purpose": "抽一个动物动作来模仿",
+      "kind": "game:lottery",
+      "slug": "animal_action",
+      "color": "#a3e635",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_animal_action_thumb.png"
+    },
+    {
+      "no": 72,
+      "title": "小小观察员",
+      "purpose": "抽一个观察任务",
+      "kind": "game:lottery",
+      "slug": "little_observer",
+      "color": "#60a5fa",
+      "category": "互动游戏",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_little_observer_thumb.png"
+    },
+    {
+      "no": 73,
+      "title": "颜色涂鸦板",
+      "purpose": "专注颜色自由涂鸦",
+      "kind": "drawing",
+      "slug": "color_doodle",
+      "color": "#ef4444",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_color_doodle_thumb.png"
+    },
+    {
+      "no": 74,
+      "title": "形状画板",
+      "purpose": "画圆形、方形和三角形",
+      "kind": "drawing",
+      "slug": "shape_drawing",
+      "color": "#0ea5e9",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_shape_drawing_thumb.png"
+    },
+    {
+      "no": 75,
+      "title": "线条练习板",
+      "purpose": "练习直线、曲线和波浪线",
+      "kind": "drawing",
+      "slug": "line_practice",
+      "color": "#64748b",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_line_practice_thumb.png"
+    },
+    {
+      "no": 76,
+      "title": "名字涂鸦板",
+      "purpose": "练习画自己的名字",
+      "kind": "drawing",
+      "slug": "name_doodle",
+      "color": "#f472b6",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_name_doodle_thumb.png"
+    },
+    {
+      "no": 77,
+      "title": "节日涂色板",
+      "purpose": "给节日图案填颜色",
+      "kind": "coloring",
+      "slug": "festival_coloring",
+      "color": "#fb923c",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_festival_coloring_thumb.png"
+    },
+    {
+      "no": 78,
+      "title": "动物涂色板",
+      "purpose": "给动物线稿上色",
+      "kind": "coloring",
+      "slug": "animal_coloring",
+      "color": "#84cc16",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_animal_coloring_thumb.png"
+    },
+    {
+      "no": 79,
+      "title": "交通涂色板",
+      "purpose": "给小车和房子上色",
+      "kind": "coloring",
+      "slug": "transport_coloring",
+      "color": "#38bdf8",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_transport_coloring_thumb.png"
+    },
+    {
+      "no": 80,
+      "title": "贴纸贺卡板",
+      "purpose": "用贴纸做一张小贺卡",
+      "kind": "stickers",
+      "slug": "sticker_card",
+      "color": "#f472b6",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_sticker_card_thumb.png"
+    },
+    {
+      "no": 81,
+      "title": "贴纸天气板",
+      "purpose": "用贴纸装饰天气场景",
+      "kind": "stickers",
+      "slug": "weather_stickers",
+      "color": "#60a5fa",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_weather_stickers_thumb.png"
+    },
+    {
+      "no": 82,
+      "title": "贴纸农场板",
+      "purpose": "用贴纸布置小农场",
+      "kind": "stickers",
+      "slug": "farm_stickers",
+      "color": "#22c55e",
+      "category": "创作画板",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_farm_stickers_thumb.png"
+    },
+    {
+      "no": 83,
+      "title": "班级分队器",
+      "purpose": "快速分成多个活动小队",
+      "kind": "groups",
+      "slug": "team_groups",
+      "color": "#3b82f6",
+      "category": "班级管理",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_team_groups_thumb.png"
+    },
+    {
+      "no": 84,
+      "title": "小主持人抽取",
+      "purpose": "随机抽取今天的小主持人",
+      "kind": "helper",
+      "slug": "host_picker",
+      "color": "#f97316",
+      "category": "班级管理",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_host_picker_thumb.png"
+    },
+    {
+      "no": 85,
+      "title": "今日小明星",
+      "purpose": "随机抽取并展示今日小明星",
+      "kind": "helper",
+      "slug": "star_child_picker",
+      "color": "#facc15",
+      "category": "班级管理",
+      "asset_thumb": "web/kids_visual_tools/assets/illustrations/tool_star_child_picker_thumb.png"
+    }
+  ]
+}

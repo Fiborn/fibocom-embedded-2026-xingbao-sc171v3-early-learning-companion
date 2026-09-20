@@ -1,0 +1,28 @@
+[Unit]
+Description=Xingbao restored touch desktop and UI bridge
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fibo/xingbao_companion_unified
+Environment=HOME=/home/fibo
+Environment=DISPLAY=:0
+Environment=XDG_RUNTIME_DIR=/run/user/5005
+# The installed SDL build exposes X11 but not a usable native Wayland video
+# backend.  Keep the verified X11 path, but prevent SDL from requesting direct
+# scanout: on this board that compositor bypass creates a mapped black frame.
+Environment=SDL_VIDEODRIVER=x11
+Environment=SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR=0
+Environment=SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
+# Cold boots can leave DSI logically enabled but without a real scanout.  This
+# reapplies Mutter's current layout before Pygame opens its fullscreen window.
+# The leading '-' keeps the UI available if the graphical bus is not ready.
+ExecStartPre=-/usr/bin/python3 tools/recover_display_mode.py --wait-seconds 1
+ExecStart=/home/fibo/miniforge3/bin/python3 -u tools/board_phase1_ui.py --ui-dir /home/fibo/xingbao_companion_unified/components/touch_ui
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target graphical-session.target

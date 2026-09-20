@@ -1,0 +1,9 @@
+{
+  "vision_status_file": "saves/vision_status.json",
+  "memory_file": "saves/xingbao_memory.json",
+  "conversation_history_file": "saves/conversation_history.json",
+  "parent_summary_file": "saves/parent_summaries.json",
+  "companion_memory_file": "saves/companion_memory.json",
+  "audio_preferences_file": "saves/audio_preferences.json",
+  "agent_preferences_file": "saves/agent_preferences.json"
+}

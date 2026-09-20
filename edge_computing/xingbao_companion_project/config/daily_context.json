@@ -1,0 +1,11 @@
+{
+  "city": "",
+  "weather": {
+    "condition": "",
+    "temperature_range": "",
+    "child_advice": "",
+    "updated_at": ""
+  },
+  "today_special_days": [],
+  "known_special_days": []
+}

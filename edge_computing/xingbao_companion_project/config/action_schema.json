@@ -1,0 +1,31 @@
+﻿{
+  "screen_expressions": [
+    "neutral",
+    "smile",
+    "thinking",
+    "curious",
+    "sad",
+    "surprised",
+    "sleepy"
+  ],
+  "led_modes": [
+    "off",
+    "blue_breath",
+    "warm_breath",
+    "yellow_blink",
+    "rainbow",
+    "red_flash"
+  ],
+  "arm_actions": [
+    "stay_still",
+    "wave_hand",
+    "nod",
+    "shake_head",
+    "point_left",
+    "point_right",
+    "small_dance",
+    "bow",
+    "high_five",
+    "group_1"
+  ]
+}

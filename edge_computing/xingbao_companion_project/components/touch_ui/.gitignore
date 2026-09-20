@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.env.*
+logs/
+saves/
+screenshots/
+recordings/
+cache/
+tmp/

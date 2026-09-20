@@ -1,0 +1,18 @@
+[Unit]
+Description=Xingbao local six-point high-five vision runtime
+After=xingbao-camera.service xingbao-arm.service
+Wants=xingbao-camera.service xingbao-arm.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fibo/xingbao_companion_unified
+Environment=HOME=/home/fibo
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/fibo/miniforge3/bin/python3 -m multimodal.high_five_vision_runtime --source http://127.0.0.1:4445/?action=stream
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target graphical-session.target

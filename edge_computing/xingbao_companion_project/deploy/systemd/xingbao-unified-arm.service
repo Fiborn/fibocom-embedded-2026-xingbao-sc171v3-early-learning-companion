@@ -1,0 +1,18 @@
+[Unit]
+Description=Xingbao unified whitelisted robotic-arm expression service
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fibo/xingbao_companion_unified/components/arm_soarm101
+Environment=HOME=/home/fibo
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/home/fibo/.config/xingbao/runtime.env
+ExecStart=/home/fibo/miniforge3/bin/python3 arm_action_server_soft_nod.py
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target graphical-session.target

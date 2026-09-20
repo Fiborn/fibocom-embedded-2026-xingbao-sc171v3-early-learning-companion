@@ -1,0 +1,10 @@
+{
+  "type": "game_command",
+  "game_id": "shape_game",
+  "intent": "get_hint",
+  "user_text": "我不会",
+  "context": {
+    "source": "voice",
+    "child_age_group": "preschool"
+  }
+}

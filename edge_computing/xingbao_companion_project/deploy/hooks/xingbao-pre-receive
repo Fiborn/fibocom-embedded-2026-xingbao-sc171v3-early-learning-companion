@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+set -eu
+
+ZERO=0000000000000000000000000000000000000000
+while read oldrev newrev refname; do
+  if [ "$newrev" = "$ZERO" ]; then
+    echo "Deleting shared branches or tags is forbidden: $refname" >&2
+    exit 1
+  fi
+  case "$refname" in
+    refs/tags/*)
+      if [ "$oldrev" != "$ZERO" ]; then
+        echo "Published tags are immutable: $refname" >&2
+        exit 1
+      fi
+      ;;
+    refs/heads/main)
+      if [ "$oldrev" != "$ZERO" ]; then
+        echo "Direct updates to main are disabled on the board remote." >&2
+        echo "Push a codex/*, baseline/* or release/* branch for reviewed integration." >&2
+        exit 1
+      fi
+      ;;
+    refs/heads/codex/*|refs/heads/baseline/*|refs/heads/release/*)
+      ;;
+    refs/heads/*)
+      echo "Unsupported shared branch namespace: $refname" >&2
+      exit 1
+      ;;
+  esac
+done

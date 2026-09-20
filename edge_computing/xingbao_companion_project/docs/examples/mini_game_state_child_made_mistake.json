@@ -1,0 +1,13 @@
+{
+  "type": "mini_game_state",
+  "source": "new_mini_game",
+  "payload": {
+    "game_id": "shape_game",
+    "state": "child_made_mistake",
+    "confidence": 0.95,
+    "progress": {
+      "round": 1,
+      "score": 0
+    }
+  }
+}

@@ -1,0 +1,1232 @@
+{
+  "energy_red": {
+    "path": "energy_orbs/energy_red.png",
+    "source": "科幻能量球图标集合.png",
+    "bbox": [
+      40,
+      120,
+      365,
+      505
+    ]
+  },
+  "energy_yellow": {
+    "path": "energy_orbs/energy_yellow.png",
+    "source": "科幻能量球图标集合.png",
+    "bbox": [
+      455,
+      120,
+      785,
+      505
+    ]
+  },
+  "energy_blue": {
+    "path": "energy_orbs/energy_blue.png",
+    "source": "科幻能量球图标集合.png",
+    "bbox": [
+      870,
+      120,
+      1210,
+      505
+    ]
+  },
+  "energy_green": {
+    "path": "energy_orbs/energy_green.png",
+    "source": "科幻能量球图标集合.png",
+    "bbox": [
+      45,
+      640,
+      375,
+      1030
+    ]
+  },
+  "energy_purple": {
+    "path": "energy_orbs/energy_purple.png",
+    "source": "科幻能量球图标集合.png",
+    "bbox": [
+      455,
+      640,
+      790,
+      1030
+    ]
+  },
+  "energy_orange": {
+    "path": "energy_orbs/energy_orange.png",
+    "source": "科幻能量球图标集合.png",
+    "bbox": [
+      875,
+      640,
+      1215,
+      1030
+    ]
+  },
+  "icon_color_energy": {
+    "path": "icon_set/icon_color_energy.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      65,
+      105,
+      305,
+      385
+    ]
+  },
+  "icon_geometry_signal": {
+    "path": "icon_set/icon_geometry_signal.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      380,
+      110,
+      620,
+      395
+    ]
+  },
+  "icon_memory_route": {
+    "path": "icon_set/icon_memory_route.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      685,
+      120,
+      905,
+      390
+    ]
+  },
+  "icon_star_reward": {
+    "path": "icon_set/icon_star_reward.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      975,
+      120,
+      1210,
+      390
+    ]
+  },
+  "icon_energy_core": {
+    "path": "icon_set/icon_energy_core.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      70,
+      465,
+      320,
+      735
+    ]
+  },
+  "icon_touch_interaction": {
+    "path": "icon_set/icon_touch_interaction.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      385,
+      490,
+      615,
+      740
+    ]
+  },
+  "icon_growth_level": {
+    "path": "icon_set/icon_growth_level.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      675,
+      460,
+      885,
+      735
+    ]
+  },
+  "icon_session_progress": {
+    "path": "icon_set/icon_session_progress.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      965,
+      490,
+      1205,
+      735
+    ]
+  },
+  "icon_target_lock": {
+    "path": "icon_set/icon_target_lock.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      65,
+      835,
+      320,
+      1065
+    ]
+  },
+  "icon_data_sync": {
+    "path": "icon_set/icon_data_sync.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      360,
+      850,
+      615,
+      1055
+    ]
+  },
+  "icon_ai_companion": {
+    "path": "icon_set/icon_ai_companion.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      680,
+      815,
+      930,
+      1070
+    ]
+  },
+  "icon_achievement_badge": {
+    "path": "icon_set/icon_achievement_badge.png",
+    "source": "科技感图标图集.png",
+    "bbox": [
+      960,
+      835,
+      1205,
+      1070
+    ]
+  },
+  "btn_confirm": {
+    "path": "ui_controls/compact_buttons/btn_confirm.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      45,
+      90,
+      135,
+      160
+    ]
+  },
+  "btn_cancel": {
+    "path": "ui_controls/compact_buttons/btn_cancel.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      145,
+      90,
+      240,
+      160
+    ]
+  },
+  "btn_start": {
+    "path": "ui_controls/compact_buttons/btn_start.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      255,
+      90,
+      350,
+      160
+    ]
+  },
+  "btn_upgrade": {
+    "path": "ui_controls/compact_buttons/btn_upgrade.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      365,
+      90,
+      460,
+      160
+    ]
+  },
+  "btn_settings": {
+    "path": "ui_controls/compact_buttons/btn_settings.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      475,
+      90,
+      570,
+      160
+    ]
+  },
+  "btn_dropdown": {
+    "path": "ui_controls/compact_buttons/btn_dropdown.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      580,
+      90,
+      660,
+      160
+    ]
+  },
+  "btn_home": {
+    "path": "ui_controls/compact_buttons/btn_home.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      45,
+      185,
+      125,
+      245
+    ]
+  },
+  "btn_gear": {
+    "path": "ui_controls/compact_buttons/btn_gear.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      150,
+      185,
+      235,
+      245
+    ]
+  },
+  "btn_star": {
+    "path": "ui_controls/compact_buttons/btn_star.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      260,
+      185,
+      345,
+      245
+    ]
+  },
+  "btn_bell": {
+    "path": "ui_controls/compact_buttons/btn_bell.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      370,
+      185,
+      455,
+      245
+    ]
+  },
+  "btn_user": {
+    "path": "ui_controls/compact_buttons/btn_user.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      480,
+      185,
+      565,
+      245
+    ]
+  },
+  "btn_grid": {
+    "path": "ui_controls/compact_buttons/btn_grid.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      585,
+      185,
+      665,
+      245
+    ]
+  },
+  "btn_plus": {
+    "path": "ui_controls/compact_buttons/btn_plus.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      35,
+      270,
+      120,
+      350
+    ]
+  },
+  "btn_minus": {
+    "path": "ui_controls/compact_buttons/btn_minus.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      145,
+      270,
+      230,
+      350
+    ]
+  },
+  "btn_check_green": {
+    "path": "ui_controls/compact_buttons/btn_check_green.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      255,
+      270,
+      345,
+      350
+    ]
+  },
+  "btn_close_red": {
+    "path": "ui_controls/compact_buttons/btn_close_red.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      365,
+      270,
+      455,
+      350
+    ]
+  },
+  "btn_next": {
+    "path": "ui_controls/compact_buttons/btn_next.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      480,
+      270,
+      565,
+      350
+    ]
+  },
+  "btn_play_yellow": {
+    "path": "ui_controls/compact_buttons/btn_play_yellow.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      585,
+      270,
+      670,
+      350
+    ]
+  },
+  "chip_select_blue_1": {
+    "path": "ui_controls/select_chips/chip_select_blue_1.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      700,
+      95,
+      815,
+      140
+    ]
+  },
+  "chip_select_purple_1": {
+    "path": "ui_controls/select_chips/chip_select_purple_1.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      830,
+      95,
+      945,
+      140
+    ]
+  },
+  "chip_select_yellow_1": {
+    "path": "ui_controls/select_chips/chip_select_yellow_1.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      960,
+      95,
+      1075,
+      140
+    ]
+  },
+  "chip_select_blue_2": {
+    "path": "ui_controls/select_chips/chip_select_blue_2.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1090,
+      95,
+      1205,
+      140
+    ]
+  },
+  "chip_select_blue_circle": {
+    "path": "ui_controls/select_chips/chip_select_blue_circle.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      700,
+      190,
+      815,
+      235
+    ]
+  },
+  "chip_select_purple_circle": {
+    "path": "ui_controls/select_chips/chip_select_purple_circle.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      830,
+      190,
+      945,
+      235
+    ]
+  },
+  "chip_select_yellow_circle": {
+    "path": "ui_controls/select_chips/chip_select_yellow_circle.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      960,
+      190,
+      1075,
+      235
+    ]
+  },
+  "chip_select_blue_circle2": {
+    "path": "ui_controls/select_chips/chip_select_blue_circle2.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1090,
+      190,
+      1205,
+      235
+    ]
+  },
+  "chip_select_blue_check": {
+    "path": "ui_controls/select_chips/chip_select_blue_check.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      700,
+      285,
+      815,
+      330
+    ]
+  },
+  "chip_select_purple_check": {
+    "path": "ui_controls/select_chips/chip_select_purple_check.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      830,
+      285,
+      945,
+      330
+    ]
+  },
+  "chip_select_yellow_check": {
+    "path": "ui_controls/select_chips/chip_select_yellow_check.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      960,
+      285,
+      1075,
+      330
+    ]
+  },
+  "chip_select_blue_check2": {
+    "path": "ui_controls/select_chips/chip_select_blue_check2.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1090,
+      285,
+      1205,
+      330
+    ]
+  },
+  "back_round_blue": {
+    "path": "ui_controls/back_arrows/back_round_blue.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      35,
+      430,
+      130,
+      530
+    ]
+  },
+  "back_square_blue": {
+    "path": "ui_controls/back_arrows/back_square_blue.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      145,
+      430,
+      255,
+      530
+    ]
+  },
+  "back_octagon_purple": {
+    "path": "ui_controls/back_arrows/back_octagon_purple.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      260,
+      430,
+      390,
+      530
+    ]
+  },
+  "back_round_yellow": {
+    "path": "ui_controls/back_arrows/back_round_yellow.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      385,
+      430,
+      500,
+      530
+    ]
+  },
+  "back_square_blue2": {
+    "path": "ui_controls/back_arrows/back_square_blue2.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      520,
+      430,
+      625,
+      530
+    ]
+  },
+  "status_local": {
+    "path": "ui_controls/status_chips/status_local.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      705,
+      445,
+      825,
+      500
+    ]
+  },
+  "status_touch": {
+    "path": "ui_controls/status_chips/status_touch.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      835,
+      445,
+      955,
+      500
+    ]
+  },
+  "status_safe": {
+    "path": "ui_controls/status_chips/status_safe.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      965,
+      445,
+      1085,
+      500
+    ]
+  },
+  "status_ready": {
+    "path": "ui_controls/status_chips/status_ready.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1095,
+      445,
+      1215,
+      500
+    ]
+  },
+  "status_local_icon": {
+    "path": "ui_controls/status_chips/status_local_icon.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      705,
+      515,
+      825,
+      570
+    ]
+  },
+  "status_touch_icon": {
+    "path": "ui_controls/status_chips/status_touch_icon.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      835,
+      515,
+      955,
+      570
+    ]
+  },
+  "status_safe_icon": {
+    "path": "ui_controls/status_chips/status_safe_icon.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      965,
+      515,
+      1085,
+      570
+    ]
+  },
+  "status_ready_icon": {
+    "path": "ui_controls/status_chips/status_ready_icon.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1095,
+      515,
+      1215,
+      570
+    ]
+  },
+  "progress_25": {
+    "path": "ui_controls/progress_pills/progress_25.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      40,
+      645,
+      220,
+      685
+    ]
+  },
+  "progress_50": {
+    "path": "ui_controls/progress_pills/progress_50.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      250,
+      645,
+      430,
+      685
+    ]
+  },
+  "progress_75": {
+    "path": "ui_controls/progress_pills/progress_75.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      460,
+      645,
+      640,
+      685
+    ]
+  },
+  "progress_100": {
+    "path": "ui_controls/progress_pills/progress_100.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      40,
+      705,
+      220,
+      745
+    ]
+  },
+  "progress_60": {
+    "path": "ui_controls/progress_pills/progress_60.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      250,
+      705,
+      430,
+      745
+    ]
+  },
+  "progress_loading": {
+    "path": "ui_controls/progress_pills/progress_loading.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      460,
+      705,
+      640,
+      745
+    ]
+  },
+  "progress_running": {
+    "path": "ui_controls/progress_pills/progress_running.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      40,
+      765,
+      220,
+      805
+    ]
+  },
+  "progress_dots": {
+    "path": "ui_controls/progress_pills/progress_dots.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      250,
+      765,
+      430,
+      805
+    ]
+  },
+  "progress_0_100": {
+    "path": "ui_controls/progress_pills/progress_0_100.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      460,
+      765,
+      640,
+      805
+    ]
+  },
+  "toggle_cyan_on": {
+    "path": "ui_controls/toggles/toggle_cyan_on.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      700,
+      660,
+      835,
+      720
+    ]
+  },
+  "toggle_purple_on": {
+    "path": "ui_controls/toggles/toggle_purple_on.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      860,
+      660,
+      995,
+      720
+    ]
+  },
+  "toggle_yellow_on": {
+    "path": "ui_controls/toggles/toggle_yellow_on.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1020,
+      660,
+      1155,
+      720
+    ]
+  },
+  "toggle_cyan_off": {
+    "path": "ui_controls/toggles/toggle_cyan_off.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      705,
+      730,
+      835,
+      795
+    ]
+  },
+  "toggle_purple_off": {
+    "path": "ui_controls/toggles/toggle_purple_off.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      865,
+      730,
+      995,
+      795
+    ]
+  },
+  "toggle_yellow_off": {
+    "path": "ui_controls/toggles/toggle_yellow_off.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1025,
+      730,
+      1155,
+      795
+    ]
+  },
+  "dot_cyan": {
+    "path": "ui_controls/indicators/dot_cyan.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      35,
+      910,
+      75,
+      950
+    ]
+  },
+  "dot_purple": {
+    "path": "ui_controls/indicators/dot_purple.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      80,
+      910,
+      120,
+      950
+    ]
+  },
+  "dot_yellow": {
+    "path": "ui_controls/indicators/dot_yellow.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      125,
+      910,
+      165,
+      950
+    ]
+  },
+  "dot_blue": {
+    "path": "ui_controls/indicators/dot_blue.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      170,
+      910,
+      210,
+      950
+    ]
+  },
+  "dot_green": {
+    "path": "ui_controls/indicators/dot_green.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      215,
+      910,
+      255,
+      950
+    ]
+  },
+  "dot_red": {
+    "path": "ui_controls/indicators/dot_red.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      260,
+      910,
+      300,
+      950
+    ]
+  },
+  "hex_wifi": {
+    "path": "ui_controls/indicators/hex_wifi.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      360,
+      900,
+      430,
+      970
+    ]
+  },
+  "hex_signal": {
+    "path": "ui_controls/indicators/hex_signal.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      440,
+      900,
+      510,
+      970
+    ]
+  },
+  "hex_warning": {
+    "path": "ui_controls/indicators/hex_warning.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      520,
+      900,
+      590,
+      970
+    ]
+  },
+  "hex_check": {
+    "path": "ui_controls/indicators/hex_check.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      600,
+      900,
+      670,
+      970
+    ]
+  },
+  "badge_drop": {
+    "path": "ui_controls/badges/badge_drop.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      700,
+      900,
+      815,
+      1015
+    ]
+  },
+  "badge_star": {
+    "path": "ui_controls/badges/badge_star.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      830,
+      900,
+      945,
+      1015
+    ]
+  },
+  "badge_crown": {
+    "path": "ui_controls/badges/badge_crown.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      960,
+      900,
+      1075,
+      1015
+    ]
+  },
+  "badge_gem": {
+    "path": "ui_controls/badges/badge_gem.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1090,
+      900,
+      1210,
+      1015
+    ]
+  },
+  "pagination_blue_1": {
+    "path": "ui_controls/pagination_dots/pagination_blue_1.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      40,
+      1085,
+      80,
+      1125
+    ]
+  },
+  "pagination_blue_2": {
+    "path": "ui_controls/pagination_dots/pagination_blue_2.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      85,
+      1085,
+      125,
+      1125
+    ]
+  },
+  "pagination_blue_3": {
+    "path": "ui_controls/pagination_dots/pagination_blue_3.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      130,
+      1085,
+      170,
+      1125
+    ]
+  },
+  "pagination_blue_4": {
+    "path": "ui_controls/pagination_dots/pagination_blue_4.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      175,
+      1085,
+      215,
+      1125
+    ]
+  },
+  "pagination_blue_5": {
+    "path": "ui_controls/pagination_dots/pagination_blue_5.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      220,
+      1085,
+      260,
+      1125
+    ]
+  },
+  "pagination_purple_1": {
+    "path": "ui_controls/pagination_dots/pagination_purple_1.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      40,
+      1155,
+      80,
+      1195
+    ]
+  },
+  "pagination_purple_2": {
+    "path": "ui_controls/pagination_dots/pagination_purple_2.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      85,
+      1155,
+      125,
+      1195
+    ]
+  },
+  "pagination_purple_3": {
+    "path": "ui_controls/pagination_dots/pagination_purple_3.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      130,
+      1155,
+      170,
+      1195
+    ]
+  },
+  "pagination_purple_4": {
+    "path": "ui_controls/pagination_dots/pagination_purple_4.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      175,
+      1155,
+      215,
+      1195
+    ]
+  },
+  "pagination_purple_5": {
+    "path": "ui_controls/pagination_dots/pagination_purple_5.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      220,
+      1155,
+      260,
+      1195
+    ]
+  },
+  "divider_cyan": {
+    "path": "ui_controls/dividers/divider_cyan.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      440,
+      1090,
+      720,
+      1115
+    ]
+  },
+  "divider_purple": {
+    "path": "ui_controls/dividers/divider_purple.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      440,
+      1140,
+      720,
+      1165
+    ]
+  },
+  "divider_yellow": {
+    "path": "ui_controls/dividers/divider_yellow.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      440,
+      1180,
+      720,
+      1205
+    ]
+  },
+  "tag_new": {
+    "path": "ui_controls/small_tags/tag_new.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      775,
+      1088,
+      865,
+      1140
+    ]
+  },
+  "tag_hot": {
+    "path": "ui_controls/small_tags/tag_hot.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      885,
+      1088,
+      975,
+      1140
+    ]
+  },
+  "tag_limited": {
+    "path": "ui_controls/small_tags/tag_limited.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      995,
+      1088,
+      1090,
+      1140
+    ]
+  },
+  "tag_recommend": {
+    "path": "ui_controls/small_tags/tag_recommend.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1110,
+      1088,
+      1205,
+      1140
+    ]
+  },
+  "tag_event": {
+    "path": "ui_controls/small_tags/tag_event.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      775,
+      1150,
+      865,
+      1205
+    ]
+  },
+  "tag_mainline": {
+    "path": "ui_controls/small_tags/tag_mainline.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      885,
+      1150,
+      975,
+      1205
+    ]
+  },
+  "tag_branch": {
+    "path": "ui_controls/small_tags/tag_branch.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      995,
+      1150,
+      1090,
+      1205
+    ]
+  },
+  "tag_daily": {
+    "path": "ui_controls/small_tags/tag_daily.png",
+    "source": "未来感ui设计元素集.png",
+    "bbox": [
+      1110,
+      1150,
+      1205,
+      1205
+    ]
+  },
+  "card_state_normal": {
+    "path": "state_cards/card_state_normal.png",
+    "source": "未来ui设计样板.png",
+    "bbox": [
+      90,
+      70,
+      1060,
+      265
+    ]
+  },
+  "card_state_hover": {
+    "path": "state_cards/card_state_hover.png",
+    "source": "未来ui设计样板.png",
+    "bbox": [
+      90,
+      300,
+      1060,
+      495
+    ]
+  },
+  "card_state_selected": {
+    "path": "state_cards/card_state_selected.png",
+    "source": "未来ui设计样板.png",
+    "bbox": [
+      90,
+      540,
+      1060,
+      735
+    ]
+  },
+  "card_state_correct": {
+    "path": "state_cards/card_state_correct.png",
+    "source": "未来ui设计样板.png",
+    "bbox": [
+      90,
+      775,
+      1060,
+      970
+    ]
+  },
+  "card_state_incorrect": {
+    "path": "state_cards/card_state_incorrect.png",
+    "source": "未来ui设计样板.png",
+    "bbox": [
+      90,
+      1010,
+      1060,
+      1210
+    ]
+  },
+  "panel_companion_side": {
+    "path": "panels/panel_companion_side.png",
+    "source": "未来科幻ui设计参考图.png",
+    "bbox": [
+      40,
+      55,
+      435,
+      840
+    ]
+  },
+  "panel_top_task": {
+    "path": "panels/panel_top_task.png",
+    "source": "未来科幻ui设计参考图.png",
+    "bbox": [
+      430,
+      80,
+      1205,
+      320
+    ]
+  },
+  "panel_feedback": {
+    "path": "panels/panel_feedback.png",
+    "source": "未来科幻ui设计参考图.png",
+    "bbox": [
+      430,
+      355,
+      1205,
+      585
+    ]
+  },
+  "panel_mission_card": {
+    "path": "panels/panel_mission_card.png",
+    "source": "未来科幻ui设计参考图.png",
+    "bbox": [
+      430,
+      610,
+      1205,
+      850
+    ]
+  },
+  "panel_compact_header_bar": {
+    "path": "panels/panel_compact_header_bar.png",
+    "source": "未来科幻ui设计参考图.png",
+    "bbox": [
+      40,
+      900,
+      1205,
+      1045
+    ]
+  },
+  "panel_energy_bar": {
+    "path": "panels/panel_energy_bar.png",
+    "source": "未来科幻ui设计参考图.png",
+    "bbox": [
+      40,
+      1085,
+      1205,
+      1225
+    ]
+  },
+  "bg_stage_space": {
+    "path": "backgrounds/bg_stage_space.png",
+    "source": "未来科技舞台设计.png",
+    "bbox": [
+      0,
+      0,
+      1254,
+      1254
+    ]
+  }
+}
