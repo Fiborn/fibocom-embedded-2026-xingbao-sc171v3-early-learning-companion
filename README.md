@@ -64,6 +64,8 @@ flowchart TD
 
 ```bash
 git lfs install
+git clone https://github.com/Fiborn/fibocom-embedded-2026-xingbao-sc171v3-early-learning-companion.git
+cd fibocom-embedded-2026-xingbao-sc171v3-early-learning-companion
 git lfs pull
 cd edge_computing/xingbao_companion_project
 python3 -m pip install -r requirements.txt
@@ -76,7 +78,7 @@ python3 main.py --text-demo
 ## 提交与资源说明
 
 - 模板来源：[Fiborn/FiBoom-project](https://github.com/Fiborn/FiBoom-project)。
-- 提交流程：创建公开作品仓库，再向模板仓库提交作品入驻申请；当前本地准备阶段尚未上传。
+- 作品仓库：[Fiborn/fibocom-embedded-2026-xingbao-sc171v3-early-learning-companion](https://github.com/Fiborn/fibocom-embedded-2026-xingbao-sc171v3-early-learning-companion)，已于 2026-09-22 迁入 Fiborn 组织。
 - 本仓库基于 2026-09-16 从板卡复制的快照整理，不代表板卡此后的变更。
 - 原工程内部结构保留，以兼容现有导入和资源相对路径。
 - 排除了虚拟环境、运行日志、缓存、个人运行数据、历史 Git 对象及实验过程目录。
